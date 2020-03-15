@@ -1,5 +1,6 @@
-## Justen Phillips Cyber-Security Professional // Penitration Tester // Analyst 
-### Hack The Box
+# Justen Phillips
+## Cyber-Security Professional // Penitration Tester // Analyst 
+### Hack The Box Wiki
 This is where I will be posting write-ups for my digital adventures on [Hack the box](https://hackthebox.eu/)
 
 ```markdown
