@@ -5,7 +5,7 @@ This is where I will be posting my write-ups for my digital adventures on [Hack 
 
 [BankRobber](https://justenphillips.github.io/bankrobber.md/)
 
-![https://github.com/JustenPhillips/justenphillips.github.io/blob/master/0_LJx7T2nwjYpeVHXe.jpeg](https://github.com/JustenPhillips/justenphillips.github.io/blob/master/0_LJx7T2nwjYpeVHXe.jpeg)
+![](0_LJx7T2nwjYpeVHXe.jpeg)
 
 ```markdown
 Syntax highlighted code block
