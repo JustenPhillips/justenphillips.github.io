@@ -3,8 +3,9 @@
 ### Hack The Box Wiki
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu/)
 
-[BankRobber](https://https://justenphillips.github.io/bankrobber.md/)
-![Image](https://github.com/JustenPhillips/justenphillips.github.io/blob/master/0_LJx7T2nwjYpeVHXe.jpeg)
+[BankRobber](https://justenphillips.github.io/bankrobber.md/)
+
+![https://github.com/JustenPhillips/justenphillips.github.io/blob/master/0_LJx7T2nwjYpeVHXe.jpeg](https://github.com/JustenPhillips/justenphillips.github.io/blob/master/0_LJx7T2nwjYpeVHXe.jpeg)
 
 ```markdown
 Syntax highlighted code block
