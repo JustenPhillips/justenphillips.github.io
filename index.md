@@ -3,9 +3,9 @@
 ### Hack The Box Wiki
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
 
-[BankRobber](https://justenphillips.github.io/bankrobber.md)
+[BankRobber](bankrobber.md)
 
-![](0_LJx7T2nwjYpeVHXe.jpeg)
+![bankrobber.md](0_LJx7T2nwjYpeVHXe.jpeg)
 
 ```markdown
 Syntax highlighted code block
