@@ -1,10 +1,13 @@
 # BankRobber
 
 ### Reconnaissance
-We know that it is a Windows box in the description and that it is insanse difficulty.
-Here is where I crank up good old Nmap to initate my SYN-ACK TCP probe to identify some open ports and services.
-![](decrypt.png)
+We know that this is a Windows box already from the description and can just as easily determine that from our next step.
 
+Here is where I crank up good old faithful, the tool that is almost as old as the internet itself, Nmap, to initate a SYN- stealth scan and probe common TCP ports to identify some services on this box.
+![](decrypt.png)
+We see here that HTTP/s web servies are available on this host at standard ports 80 and 443, a MYSQL database on 3306 as well as a open port on 445 standard SMB.
+Well since the name of the challenge is BankRobber, I think it is pretty safe to assume their is a bank involved. So lets surf over to the web site and have a looksee at this bank's authentication mechanisms and see if we can break her.
+![](1_wy90awGa3Gs134p2O61QTQ.png)
 
 ### Weaponization
 Intruder develops malware designed to exploit the vulnerability
