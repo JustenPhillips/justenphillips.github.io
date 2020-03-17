@@ -4,7 +4,7 @@
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people reading my page,
 
-My government name is Justen pronounced "Just 10" and I like to break into things, legally of course! Prison is cold and dangerious, a office is warm and mostly safe. If you prefer, you can address me by one of the many handles that I mask my identity with and change almost as often as my underwear. I Have been debating if I should disclose, my full-story here, but maybe I will save that for my book released in Nevuary. The game is meant to be sold, not told. Unless it's about hacking stuff cause that type of knowledge is too juicy to withhold and needs to be shared!
+You have now reached the end of the internet. My government name is in this page's domain and the top header. It is pronounced "Just 10" and something I like is to break into things, legally of course! Prison is cold and dangerious, a office is warm and mostly safe. If you prefer, you can address me by one of the many handles that I mask my identity with and change almost as often as my underwear. I Have been debating if I should disclose my full-story here, but maybe I will save that for my book released in Nevuary. The game is meant to be sold, not told. Unless it's about hacking stuff cause that type of knowledge is too juicy to withhold and needs to be shared!
 
 
 ### Hack The Box Wiki
