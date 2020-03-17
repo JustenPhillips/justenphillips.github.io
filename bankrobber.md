@@ -1,7 +1,10 @@
 # BankRobber
 
 ### Reconnaissance
-Intruder picks a target, researches it, and looks for vulnerabilities
+We know that it is a Windows box in the description and that it is insanse difficulty.
+Here is where I crank up good old Nmap to initate my SYN-ACK TCP probe to identify some open ports and services.
+![](decrypt.png)
+
 
 ### Weaponization
 Intruder develops malware designed to exploit the vulnerability
