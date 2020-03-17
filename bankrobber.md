@@ -1,12 +1,10 @@
 # BankRobber
 
-This was my first box I ever attempted on HTB and it was active rated at insanse difficulty. So I thought I would put my skills to the ultimate test and see what I was made of. Took me about a week of late night excursions in total isolation while I worked my day job 9 to 5 until I was able to pop her. I liked this box a lot because it consisted of vulnerabilites that I already knew how to find and exploit.
+This was my first active box on HTB I rooted, and it's rated as insanely difficult. Took me about a week of late night excursions in total isolation while I worked my day job 9 to 5 until I was able to pop her. I liked this box a lot because it consisted of vulnerabilites that I already knew how to find and exploit. Only one issue was the box required a bot to inpersonate a admin user and the response time for this was so horrible I almost gave up.
 
 ### Reconnaissance
 
-Well, so before any hack, you first must know what you are hacking. We know that this is a Windows box already from the description and can just as easily determine that with our next method.
-
-Since HTB provides a IP address of our target. We can now run nmap a good old faithful tool that is almost as old as the internet itself. We set it to initate a SYN stealth scan and probe common TCP ports to discover some services on this box.
+Well, before any PT, you first must know what is the scope of the engagument. We know that this is a Windows host already from the description card.HTB provides the IP address of our target. We can now run nmap a good old faithful tool that is almost as old as the internet itself. We set it to initate a SYN stealth scan and probe common TCP ports to discover some services on this box.
 ![](decrypt.png)
 We see here that HTTP/s web services are available on this host at standard ports 80 and 443, a MYSQL database on 3306 as well as a open port on 445 standard SMB which is another way to determine the likelyness this is a Windows machine.
 
