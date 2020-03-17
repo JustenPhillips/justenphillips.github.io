@@ -1,5 +1,6 @@
 # Justen Phillips
-## Cybersecurity Professional // Penetration Tester // Analyst
+## Cybersecurity Professional 
+## Penetration Tester // Consultant // Forensics Analyst // Threat Hunter 
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people reading my page,
 
