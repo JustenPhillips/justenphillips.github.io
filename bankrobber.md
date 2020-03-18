@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/HTB/assets/css/style.css?v=7e2b95725e227706e06d3c17f5dd025fa27db2fd">
 
 <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Scatterbrain | HTB</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Scatterbrain" />
 <meta property="og:locale" content="en_US" />
