@@ -1,5 +1,7 @@
-
-
+---
+layout: default
+---
+<body>
 # Bankrobber
 
 <a href="bankrobber.md"><img src="img/card.jpeg" width="40%"></a>
@@ -198,3 +200,4 @@ The intruder gains persistent access to the victim’s systems/network
 
 ### Actions on Objective
 Intruder initiates end goal actions, such as data theft, data corruption, or data destruction
+</body>
