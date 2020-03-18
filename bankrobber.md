@@ -222,5 +222,3 @@ The intruder gains persistent access to the victimâ€™s systems/network
 
 ### Actions on Objective
 Intruder initiates end goal actions, such as data theft, data corruption, or data destruction
-  </body>
-</html>
