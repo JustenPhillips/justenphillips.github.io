@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/HTB/assets/css/style.css?v=63858c7af8d5dec45ba1d4061724f737a285a79c">
-
-<!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Scatterbrain | HTB</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Scatterbrain" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Hacking write-ups" />
-<meta property="og:description" content="Hacking write-ups" />
-<link rel="canonical" href="https://scatter-security.github.io/HTB/" />
-<meta property="og:url" content="https://scatter-security.github.io/HTB/" />
-<meta property="og:site_name" content="HTB" />
-<script type="application/ld+json">
-{"@type":"WebSite","headline":"Scatterbrain","url":"https://scatter-security.github.io/HTB/","name":"HTB","description":"Hacking write-ups","@context":"https://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-
-  </head>
-<body>
-
 
 # Bankrobber
 
