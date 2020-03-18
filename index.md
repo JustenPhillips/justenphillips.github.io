@@ -9,7 +9,8 @@ Welcome to my page, you have now reached the end of the internet and if you some
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
 
 
-[![bankrobber.md](img/card.jpeg){:height="50%" width="50%"}](bankrobber.md)
+[![bankrobber.md](img/card.jpeg)](bankrobber.md){:height="50%" width="50%"}
+
 [BankRobber](bankrobber.md)
 
 Hella Secure Corp. © 2020 and beyond 
