@@ -16,8 +16,6 @@
 <link rel="canonical" href="https://scatter-security.github.io/HTB/" />
 <meta property="og:url" content="https://scatter-security.github.io/HTB/" />
 <meta property="og:site_name" content="HTB" />
-<script type="application/ld+json">
-{"@type":"WebSite","headline":"Scatterbrain","url":"https://scatter-security.github.io/HTB/","name":"HTB","description":"Hacking write-ups","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
