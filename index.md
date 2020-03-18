@@ -11,5 +11,5 @@ This is where I will be posting my write-ups for my digital adventures on [Hack 
 [![bankrobber.md](img/card.jpeg)](bankrobber.md)
 [BankRobber](bankrobber.md)
 
-Hella Secure Corp. © 2020 and beyond
+Hella Secure Corp. © 2020 and beyond 
  
