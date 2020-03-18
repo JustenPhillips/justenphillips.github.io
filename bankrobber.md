@@ -1,14 +1,16 @@
 # BankRobber
 
-This was my first active box on HTB that I was able to root, and it's rated at an insane difficulty. So I thought this would be a great place to start for my first write-up. 
+This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down.
 
-Took me about a week of late night excursions in total isolation and focus until I was able to pop it. It's not easy for me to attain free-time due to my obligated daily responsibilities. So sleep was limited but I was very determined to get this one.
+It took me about a week of late-night excursions in total isolation until I was able to pop it. It's not easy for me to attain free-time due to my obligated daily responsibilities as a father and Security Analyst. So sleep was limited but I was very determined to get this one.
 
-I liked this box a lot because it consisted of vulnerabilites that I already knew how to find and exploit as I was trained by Security Consultants and Senior Penetration Testers to do so. Only issue I had was this box required a bot to inpersonate a admin's session and the response time for this was just not there, which was a major detourant and took me a while to notice, almost to the point that I gave up. After I got over that mountain and seen a reaction from my script, I was able to get inital foothold and eventually root it within a few days.
+I liked this box a lot because it consisted of vulnerabilities that I already knew how to find and exploit as I was trained by Security Consultants and Senior Penetration Testers the proper methodology to perform a PT. 
+
+The only issue I had was this box required a bot to impersonate an admin's session and the response time for this was just not there, which was a major detour, almost to the point that I gave up. After I climbed that wall, I was able to get initial foothold and eventually rooted within a few days.
 
 ### Reconnaissance
 
-Well, before any PT, you first must know what is the scope of the engagement. What do we already know, we know that this is a Windows host from the description card and HTB provided the IP address of our target. So we turn to `nmap` a faithful and reliable tool that is almost as old as the internet itself. Then initate a scan and probe all common TCP ports to discover some services to test.
+Well, before any PT, you first must know what is the scope of the engagement. What do we already know, what must we find out. We know that this is a Windows host from the description card and HTB provided the IP address of our target. So we turn to `Nmap` a faithful and reliable tool that is almost as old as the internet itself. Then initiate a scan and probe all common TCP ports to discover some services to test.
 ```bash
 # nmap -e tun0 -n -v -Pn -p80,443,445,3306 -A --reason -oN nmap.txt 10.10.10.154
 ...
@@ -33,20 +35,23 @@ PORT     STATE SERVICE      REASON          VERSION
 445/tcp  open  microsoft-ds syn-ack ttl 127 Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
 3306/tcp open  mysql        syn-ack ttl 127 MariaDB (unauthorized)
 ```
-We see here that HTTP/s web services are available at standard ports 80 and 443, a MYSQL database on standard 3306 as well as a open port on 445 standard SMB which is another way to determine the likelyness this is a Windows machine.
+We see here that HTTP/s web services are available at standard ports 80 and 443, an MYSQL database on standard 3306 as well as an open port on 445 standard SMB which is another way to determine the likeliness this is a Windows machine.
 
-Since the name of the challenge is BankRobber, I think it is pretty safe to assume their is a bank involved.
-Before looking at the network stack I always begin with the application layer. So I load up my HTTP proxy/sniffer/injector/fuzzer Burp Suite,the swiss army knife of HTTP testing and surf over to the web site to have a look-see at this Bank's applications and see what she is made of.
+
+
+Since the name of the challenge is BankRobber, I think it is pretty safe to assume there is a bank involved.
+
+Before looking at the network stack I always begin with the application layer. So I load up my HTTP proxy/sniffer/injector/fuzzer Burp Suite, the swiss army knife of HTTP testing and surf over to the web site to have a look-see at this Bank's applications and see what she is made of.Free grammar check
 
 So we see here that this is some kind of BitCoin operation. Let's learn more...
 ![](img/recon.png)
 
 #### Directory/File Enumeration
 
-First I spider with Burp to crawl unauthenticated to build a basic site-map.
+First I spider with Burp to crawl the site unauthenticated to build a map.
 ![](img/sitemap.png)
 
-While in my terminal I run `Gobuster` with `Seclists`
+While in my terminal I run `Gobuster` with `Seclists` because I wanted to see the difference.
 ```bash
 # gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories-lowercase.txt -t 40 -x php,txt,log -u http://10.10.10.154/
 ===============================================================
@@ -89,11 +94,11 @@ Progress: 8536 / 17771 (48.03%)^C
 2019/09/24 02:41:33 Finished
 ===============================================================
 ```
-`login.php` and `register.php` both have a input fields to test later.
+`login.php` and `register.php` both have a input fields and I make a note to test later.
 
-The `/admin` dir is not accessible, session managment will be tested.
+The `/admin` dir is not accessible, session managment and authorization will be tested.
 
-`notes.txt` provided some Dev notes left behind.
+`notes.txt` provided some useful Dev notes left behind possibly for later.
 ![](img/notes.png)
 
 let's do a HTTP packet analysis of the `.php` files with `curl`
@@ -137,7 +142,7 @@ Content-Length: 0
 Content-Type: text/html; charset=UTF-8
 ```
 
-Now let's try to login.
+Ok that seemed to work, now let's try to login with our fresh account.
 ```bash
  # curl -i -d "username=mother&password=goose" http://10.10.10.154/login.php
 HTTP/1.1 302 Found
@@ -151,23 +156,24 @@ Location: user
 Content-Length: 0
 Content-Type: text/html; charset=UTF-8
 ```
-The response headers here tells us a lot about the authentication mechanisms in place.
+The response headers here tells us a lot of useful information about the authentication mechanisms in place.
 
 `Location: user` indicates redirection to the `/user` dir 
 we can assume admin should get redirected to `/admin`
 
-cookie-based authentication
+cookie-based authentication:
 `Set-Cookie: id=25` tells us it's likely there are 25 other accounts 
-`id=1` or `0` is probably the admin
+`id=1` or `0` is probably the admin.
 
 The username and password values are base64 and url-encoded.
 
-We can try a few basic passwords to attempt to login as admin.
+We can try a few basic passwords to attempt to login as admin but failed.
 There is no lockout mechnaisms for attempts made.
-This sets the stage if all else fails for a Brute Force attack 
-but I want to return to the `login.php` and see what else we can do.
+This sets the stage if all else fails for a Brute Force attacks 
+but I was feeling BF is a bit too much Script Kiddie like for an insane box, 
+so return to the `login.php` to see what else might we be able to do.
 
-Session surfing with blind reflected XSS attack.
+So now I switch over to Burp and Browser.
 
 
 
