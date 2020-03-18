@@ -1,4 +1,5 @@
-# BankRobber
+# Bankrobber
+
 
 This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down.
 
