@@ -8,8 +8,7 @@ Welcome to my page, you have now reached the end of the internet and if you some
 ## Write-ups
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
 
-
-[![bankrobber.md](img/card.jpeg){:height="50%" width="50%"}](bankrobber.md)
+<img src="img/card.jpeg" href="bankrobber.md" width="40%">
 
 [BankRobber](bankrobber.md)
 
