@@ -1,7 +1,7 @@
 title: Scatterbrain
 description: Penetration Tester // Security Consultant // Forensics Analyst // Threat Hunter 
 show_downloads: false
+is_project_page: false
 google_analytics: false
 theme: jekyll-theme-hacker
-github:
-  is_project_page: false
+
