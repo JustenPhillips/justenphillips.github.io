@@ -11,5 +11,5 @@ This is where I will be posting my write-ups for my digital adventures on [Hack 
 
 [BankRobber](bankrobber.md)
 
-![bankrobber.md](0_LJx7T2nwjYpeVHXe.jpeg)
+![bankrobber.md](img/card.jpeg)
 
