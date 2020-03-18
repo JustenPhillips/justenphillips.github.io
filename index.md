@@ -7,7 +7,7 @@ Welcome to my page, you have now reached the end of the internet and if you some
 
 ### Hack The Box Wiki
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
-
+------------------------------------------------------------------------------------------
 [BankRobber](bankrobber.md)
 [![bankrobber.md](img/card.jpeg)](bankrobber.md)
  
