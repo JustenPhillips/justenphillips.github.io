@@ -1,5 +1,4 @@
-# Scatterbrain
-## Penetration Tester // Consultant // Forensics Analyst // Threat Hunter 
+
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
 
