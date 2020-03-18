@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Bankrobber
 
 <a href="bankrobber.md"><img src="img/card.jpeg" width="40%">
