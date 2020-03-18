@@ -1,5 +1,5 @@
-title: Scatter-Security
+title: Scatterbrain
 description: Hack The Box write ups
-show_downloads: true
-google_analytics:
+show_downloads: false
+google_analytics: false
 theme: jekyll-theme-hacker
