@@ -1,12 +1,15 @@
 <nav>
-<h1>Fixed header</h1>
-<h2>Subheader</h2>
+<h1>./Scatterbrain</h1>
+<h2>hacker</h2>
 <ul>
-..
+<li><a href="default.asp">Home</a></li>
+<li><a href="news.asp">News</a></li>
+<li><a href="contact.asp">Contact</a></li>
+<li><a href="about.asp">About</a></li>
 </ul>
 </nav>
 
-# ./Scatterbrain
+# 
 
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
