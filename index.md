@@ -26,11 +26,10 @@
           </a>
         </li>
   <li>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"> itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i> hide
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i>hide
     </a>
   </li>
--->
     </ul>
   </div>
   
