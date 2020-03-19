@@ -1,8 +1,11 @@
 
 # Bankrobber
+
 [Home](index.md) / Bankrobber - Hack The Box
 
 <img src="img/card.jpeg" width="40%">
+
+****
 
 This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down. I am not writting this like a traditional Pentest report to a client but from the perspective of a teacher speaking to a student and will attempt to recapture my thought proccess so you can understand the flow.
 
@@ -10,9 +13,13 @@ I liked this box a lot because it consisted of web vulnerabilities that I alread
 
 The only issue I had was this box required a bot to impersonate an admin's session and the response time for this was just not there, which was a major detour, almost to the point that I gave up. After I climbed that wall, I was able to get initial foothold and eventually rooted within a few days.
 
+----
+
 ### Synopsis
 
 Bankrobber is a web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.
+
+----
 
 ### Reconnaissance
 
