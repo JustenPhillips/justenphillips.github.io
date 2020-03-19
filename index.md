@@ -9,8 +9,6 @@ United States<br>
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">Close</a>
     </ul>
   </div>
-  
-</div>
 
 <script>
 function openNav() {
