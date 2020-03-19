@@ -1,3 +1,77 @@
+<div class="col-sm-3 sidebar hidden-xs" style="background: url(https://bobbelderbos.com/assets/binary_wallpaper.jpg) no-repeat center center !important; height: 1600px;">
+		<!-- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="https://www.gravatar.com/avatar/e1d159796a39ce2eafe4b40e9b8f9871?s=150" class="img-circle">
+	</a>
+</header>
+
+
+<div id="bio" class="text-center">
+
+  <p>Software Developer, Pythonista, Data Geek, Student of Life.</p>
+
+  <ul id="sbLinks">
+    <li><i class="fa fa-info-circle"></i> <a href="/guide">__init__</a></li>
+	  <li><i class="fa fa-archive"></i> <a href="/archive">Blog</a></li>
+    <li><i class="fa fa-book"></i> <a href="/books">Books</a></li>
+  </ul>
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+	 <li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/bbelderbos" target="_blank">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/bbelderbos" target="_blank">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" title="PyBites blog" href="https://pybit.es" target="_blank">
+				<i class="fa icon-python fa-lg-ow"></i>
+			</a>
+		</li>
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline" style="display: none;">
+		<li>
+			<a class="btn btn-default btn-sm" href="/feed.xml" target="_blank">
+				<i class="fa fa-rss fa-lg"></i>
+			</a>
+		</li>
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://linkedin.com/in/bbelderbos" target="_blank">
+				<i class="fa fa-linkedin fa-lg"></i>
+			</a>
+		</li>
+		<li>
+			<a class="btn btn-default btn-sm" href="https://www.facebook.com/groups/1305028816183522" target="_blank">
+				<i class="fa fa-facebook fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+
+<hr class="softDivider">
+
+<div id="ninjaWidget">
+  <a href="https://codechalleng.es/via/bob" target="_blank"><img src="https://codechalleng.es/static/img/honors/ninja_widget.png" alt="Learn Python, Earn PyBites Ninja Belts"></a>
+</div>
+<!-- sidebar.html end -->
+
+	</div>
+
+
 # Scatterbrain
 
 ### Short Bio about Me:
