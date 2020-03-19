@@ -1,16 +1,18 @@
 
 # Bankrobber
-[back](index.md)
+[Home](index.md) / Bankrobber - Hack The Box
 
 <img src="img/card.jpeg" width="40%">
 
-This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down.
+This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down. I am not writting this like a traditional Pentest report to a client but from the perspective of a teacher speaking to a student and will attempt to recapture my thought proccess so you can understand the flow.
 
-It took me about a week of late-night excursions in total isolation until I was able to pop it. It's not easy for me to attain free-time due to my obligated daily responsibilities as a father and Security Analyst. So sleep was limited but I was very determined to get this one.
-
-I liked this box a lot because it consisted of vulnerabilities that I already knew how to find and exploit as I was trained by Security Consultants and Senior Penetration Testers the proper methodology to perform a PT. 
+I liked this box a lot because it consisted of web vulnerabilities that I already knew how to find and exploit and emulated a realistic Pentest. 
 
 The only issue I had was this box required a bot to impersonate an admin's session and the response time for this was just not there, which was a major detour, almost to the point that I gave up. After I climbed that wall, I was able to get initial foothold and eventually rooted within a few days.
+
+### Synopsis
+
+Bankrobber is a web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.
 
 ### Reconnaissance
 
@@ -50,12 +52,17 @@ Before looking at the network stack I always begin with the application layer. S
 So we see here that this is some kind of BitCoin operation. Let's learn more...
 ![](img/recon.png)
 
+### Web Enumeration
+We see that this is a site for users to buy and sell E-Coin cryptocurrency.
+There is a LOGIN and Register link in the top right head of the page.
+We can Register a account and login to discover a mechanism for transfering funds from account to account and a text field to leave a comment.
+
 #### Directory/File Enumeration
 
-First I spider with Burp to crawl the site unauthenticated to build a map.
+First I spider with Burp to crawl the site and build a map.
 ![](img/sitemap.png)
 
-While in my terminal I run `Gobuster` with `Seclists` because I wanted to see the difference.
+While in my terminal I run `Gobuster` with `Seclists` because I wanted to compare/contrast the difference.
 ```bash
 # gobuster dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-directories-lowercase.txt -t 40 -x php,txt,log -u http://10.10.10.154/
 ===============================================================
@@ -105,14 +112,14 @@ The `/admin` dir is not accessible, session managment and authorization will be 
 `notes.txt` provided some useful Dev notes left behind possibly for later.
 ![](img/notes.png)
 
-let's do a HTTP packet analysis of the `.php` files with `curl`
+let's do a quick HTTP packet header analysis of the `.php` files with `curl`
 
 `login.php`
 
 ```bash
-# curl -i -d "username=admin&password=admin" http://10.10.10.154/login.php
+$curl -i -d "username=admin&password=admin" http://10.10.10.154/login.php
 HTTP/1.1 302 Found
-Date: Tue, 24 Sep 2019 02:49:55 GMT
+Date: Thu, 19 Mar 2020 08:07:28 GMT
 Server: Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4
 X-Powered-By: PHP/7.3.4
 Location: index.php
@@ -122,40 +129,42 @@ Content-Type: text/html; charset=UTF-8
 `register.php`
 
 ```bash
-# curl -i -d "username=admin&password=admin" http://10.10.10.154/register.php
+# $curl -i -d "username=admin&password=admin" http://10.10.10.154/register.php
 HTTP/1.1 302 Found
-Date: Tue, 24 Sep 2019 02:51:16 GMT
+Date: Thu, 19 Mar 2020 08:06:55 GMT
 Server: Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4
 X-Powered-By: PHP/7.3.4
 Location: index.php?msg=User already exists.
 Content-Length: 0
 Content-Type: text/html; charset=UTF-8
+
 ```
 We can now see that users can be enumerated by `msg=User already exist` 
 and we identifed an account with the username `admin` 
 
 let's see what happens if we create a user that dosn't exist.
 ```bash
-# curl -i -d "username=mother&password=goose" http://10.10.10.154/register.php
+$curl -i -d "username=mother&password=goose" http://10.10.10.154/register.php
 HTTP/1.1 302 Found
-Date: Tue, 24 Sep 2019 02:53:48 GMT
+Date: Thu, 19 Mar 2020 08:05:28 GMT
 Server: Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4
 X-Powered-By: PHP/7.3.4
 Location: index.php?msg=User created.
 Content-Length: 0
 Content-Type: text/html; charset=UTF-8
+
 ```
 
 Ok that seemed to work, now let's try to login with our fresh account.
 ```bash
- # curl -i -d "username=mother&password=goose" http://10.10.10.154/login.php
+ $curl -i -d "username=mother&password=goose" http://10.10.10.154/login.php
 HTTP/1.1 302 Found
-Date: Tue, 24 Sep 2019 02:55:08 GMT
+Date: Thu, 19 Mar 2020 08:08:39 GMT
 Server: Apache/2.4.39 (Win64) OpenSSL/1.1.1b PHP/7.3.4
 X-Powered-By: PHP/7.3.4
 Set-Cookie: id=25
-Set-Cookie: username=ZGlwc2hpdA%3D%3D
-Set-Cookie: password=ZGlwc2hpdA%3D%3D
+Set-Cookie: username=bW90aGVy
+Set-Cookie: password=Z29vc2U%3D
 Location: user
 Content-Length: 0
 Content-Type: text/html; charset=UTF-8
@@ -171,13 +180,20 @@ cookie-based authentication:
 
 The username and password values are base64 and url-encoded.
 
-We can try a few basic passwords to attempt to login as admin but failed.
+We can try a few basic passwords to attempt to login as admin but fail.
 There is no lockout mechnaisms for attempts made.
-This sets the stage if all else fails for a Brute Force attacks 
+This sets the stage if all else fails for a Brute Force attack
 but I was feeling BF is a bit too much Script Kiddie like for an insane box, 
-so return to the `login.php` to see what else might we be able to do.
 
-So now I switch over to Burp and Browser.
+
+So now I switch over to Burp and Browser and head over to `login.php` and log back in with our account and attempt to transfer some funds.
+![transfer](img/transfer.png)
+
+Once I submit the transfer I get prompted a JS alert stating that the `admin` will review our input in a minute. 
+![alert](img/alert.png)
+
+We know that the session tokens are static credentials and the transfer done in javascript from the alert. This is a indication of a possible blind XSS vulnerability where when the `admin` reviews our input, he will execute our malicious script. We might be able to utilize this to execute a .js stored on our own C2 host to drop and execute a payload. So now that we formulated our devious plan, lets build the tools we need to perform this.
+
 
 
 
@@ -186,6 +202,13 @@ Intruder develops malware designed to exploit the vulnerability
 
 ### Delivery
 Intruder transmits the malware via a phishing email or another medium
+
+So from my localbox terminal I use a python module called http.server (used to be simpleHTTPserver)
+```bash
+$python -m http.server 8080
+Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
+```
+
 
 ### Exploitation
 The malware begins executing on the target system
