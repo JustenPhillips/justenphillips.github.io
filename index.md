@@ -9,8 +9,8 @@
 <a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer">Twitter</a><br>
 <a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer">GitHub</a><br>
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰ Close Sidebar</a>
-    </ul>
-  </div>
+</ul>
+</div>
 
 <script>
 function openNav() {
