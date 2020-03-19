@@ -1,1 +1,13 @@
 theme: jekyll-theme-hacker
+title: Scatterbrain - Hack the Box write ups
+description: Hack the Box write ups
+author:
+  name: Justen Phillips
+  email: hack.this.0n3@gmail.com
+  url: https://scatter-security.github.io/HTB/
+
+baseurl: /
+
+paginate: 3
+owner: Justen Phillips
+year: 2020
