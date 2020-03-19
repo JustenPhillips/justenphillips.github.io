@@ -1,30 +1,12 @@
 <div id="mySidebar" class="sidebar">
-  <div class="author__urls-wrapper">
-        <li itemprop="homeLocation" itemscope="" itemtype="https://schema.org/Place">
-           <span itemprop="name">United States</span>
-        </li>
-        <li>
-          <a href="mailto:hack.this.0n3@gmail.com">
-            <meta itemprop="email" content="hack.this.0n3@gmail.com">Email
-          </a>
-        </li>
-        <li>
-          <a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer">Keybase
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer">Twitter
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer">GitHub
-          </a>
-        </li>
-  <li>
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">
-      <i class="fas fa-fw" aria-hidden="true"></i>Close
-    </a>
-  </li>
+<ul>
+United States<br>
+<a href="mailto:hack.this.0n3@gmail.com">
+<meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a><br>
+<a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer">Keybase</a><br>
+<a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer">Twitter</a><br>
+<a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer">GitHub</a><br>
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">Close</a>
     </ul>
   </div>
   
