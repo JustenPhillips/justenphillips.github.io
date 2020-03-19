@@ -47,7 +47,7 @@ We see here that HTTP/s web services are available at standard ports 80 and 443,
 
 Since the name of the challenge is BankRobber, I think it is pretty safe to assume there is a bank involved.
 
-Before looking at the network stack I always begin with the application layer. So I load up my HTTP proxy/sniffer/injector/fuzzer Burp Suite, the swiss army knife of HTTP testing and surf over to the web site to have a look-see at this Bank's applications and see what she is made of.Free grammar check
+Before looking at the network stack I always begin with the application layer. So I load up my HTTP proxy/sniffer/injector/fuzzer Burp Suite, the swiss army knife of HTTP testing and surf over to the web site to have a look-see at this Bank's applications and see what she is made of.
 
 So we see here that this is some kind of BitCoin operation. Let's learn more...
 ![](img/recon.png)
