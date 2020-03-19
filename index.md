@@ -1,16 +1,29 @@
-<nav>
-<h1>./Scatterbrain</h1>
-<h2>hacker</h2>
-<ul>
-<li><a href="default.asp">Home</a></li>
-<li><a href="news.asp">News</a></li>
-<li><a href="contact.asp">Contact</a></li>
-<li><a href="about.asp">About</a></li>
-</ul>
-</nav>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
 
-# 
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+  <h2>Collapsed Sidebar</h2>
+  <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
+</div>
 
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+   
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
 
