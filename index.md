@@ -1,6 +1,7 @@
 <div id="mySidebar" class="sidebar">
 <ul>
-United States<br>
+    <h1>Scatterbrain</h1><br>
+    <h5>&#xe55c;United States</h5><br>
 <a href="mailto:hack.this.0n3@gmail.com">
 <meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a><br>
 <a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer">Keybase</a><br>
