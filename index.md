@@ -33,4 +33,4 @@ This was a medium-difficulty. For the initial shell, you need to identify a vuln
 ----
 
 Hella Secure Corp. © 2020 and beyond  
- 
+
