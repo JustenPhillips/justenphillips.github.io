@@ -8,6 +8,8 @@ Welcome to my page, you have now reached the end of the internet and if you some
 ## Write-ups
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
 
+****
+
 **Bankrobber**
 This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.
 
@@ -18,7 +20,7 @@ This is a insane web app box that can be solved with some essential OWASP top 10
 **JSON**
 This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, `SeImpersonatePrivilege`, to perform a JuicyPotato exploit to get a SYSTEM shell.
 
-[<img src="img/JSON.jpeg" width="60%">]() 
+[<img src="img/JSON.png" width="60%">]() 
 
 ----
 
