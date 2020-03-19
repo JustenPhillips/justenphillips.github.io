@@ -1,3 +1,11 @@
+	<nav>
+	<h1>Fixed header</h1>
+	<h2>Subheader</h2>
+	<ul>
+	..
+	</ul>
+	</nav>
+
 # ./Scatterbrain
 
 ### Short Bio about Me:
