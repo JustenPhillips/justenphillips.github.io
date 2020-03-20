@@ -29,7 +29,7 @@ function closeNav() {
 <div id="aButton">
 <button onclick="openNav();" style="background-color:black;color:greenyellow;border-color:greenyellow">☰Menu</button>    
 </div>
-
+ 
 <div id="cButton" style="visibility=hidden;background-color:black;color:greenyellow;border-color:greenyellow">
 <button onclick="closeNav();">☰Hide</button>
 </div>
