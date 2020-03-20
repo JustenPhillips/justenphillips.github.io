@@ -25,7 +25,7 @@ function closeNav() {
 
 </script>
 
-<div id="aButton" class="button">
+<div id="aButton">
 <button onclick="openNav();">☰</button>
 </div>
 
