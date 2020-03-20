@@ -26,6 +26,11 @@ header {
   display: block;
   transition: 0.3s;
 }
+.avatar {
+  border-radius:50%;
+  width:150px;
+  height:150px; 
+}
 .showButton {
   font-size:20px;
   background-color:black;
