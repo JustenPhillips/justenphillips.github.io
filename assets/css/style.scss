@@ -10,6 +10,8 @@ header {
   height: 100%;
   width: 0;
   position: fixed;
+  background-color:black;
+  opacity: 0.5;
   z-index: 1;
   top: 0;
   left: 0;
@@ -27,15 +29,15 @@ header {
 .showButton {
   font-size:20px;
   background-color:black;
-  color:greenyellow;
-  border-color:greenyellow;
+  color:#C2F761;
+  border-color:#C2F761;
 }
 .closeButton {
   visibility:hidden;
   font-size:20px;
   background-color:black;
-  color:greenyellow;
-  border-color:greenyellow;
+  color:#C2F761;
+  border-color:#C2F761;
 }
 #main {
   transition: margin-left .5s;
