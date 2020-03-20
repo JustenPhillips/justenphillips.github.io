@@ -23,7 +23,7 @@ function closeNav() {
   document.getElementById("main").style.marginLeft= "0";
 }
 </script>
-
+ 
 <button class="openbtn" onclick="openNav()">☰</button>
 
 
