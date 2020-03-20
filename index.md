@@ -14,7 +14,7 @@ function closeNav() {
  
 <div id="mySidebar" class="sidebar">
 <ul>
-    <img src="/img/avatar.png" alt="Avatar" style="border-radius:50%;width:150px;height:150px;">
+    <img src="/img/avatar.png" style="border-radius:50%;width:150px;height:150px;">
     <h1>Scatterbrain</h1>
     <h4 color="white">Penetration Tester</h4>
     <h3><i class="material-icons">&#xe55c;</i> United States</h3>
