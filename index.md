@@ -11,7 +11,7 @@ function closeNav() {
 }
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+ 
 <div id="mySidebar" class="sidebar">
 <ul>
     <img src="/img/avatar.png" alt="Avatar" style="border-radius:50%;width:150px;height:150px;">
