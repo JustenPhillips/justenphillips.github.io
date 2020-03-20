@@ -1,13 +1,3 @@
-<head>
-    <script src="/assets/js/nav.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-{% seo %}
-  </head>
-
 <div id="mySidebar" class="sidebar">
 <ul>
     <h1>Scatterbrain</h1><br>
