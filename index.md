@@ -26,15 +26,11 @@ function closeNav() {
 
 </script>
 
-<div id="aButton">
-<button onclick="openNav();" style="background-color:black;color:greenyellow;border-color:greenyellow">☰Menu</button>    
-</div>
- 
-<div id="cButton">
-<button onclick="closeNav();" style="visibility:hidden;background-color:black;color:greenyellow;border-color:greenyellow">☰Hide</button>
+<div>
+<button id="aButton" onclick="openNav();" style="background-color:black;color:greenyellow;border-color:greenyellow">☰Menu</button>
+<button id="cButton" onclick="closeNav();" style="visibility:hidden;background-color:black;color:greenyellow;border-color:greenyellow">☰Hide</button>
 </div>
 
- 
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
 
