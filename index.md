@@ -1,5 +1,7 @@
 <link type="text/javascript" rel="script" href="/assets/js/nav.js">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
 <div id="mySidebar" class="sidebar">
 <ul>
     <h1>Scatterbrain</h1><br>
