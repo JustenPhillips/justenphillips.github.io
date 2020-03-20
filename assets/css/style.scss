@@ -6,6 +6,13 @@
 header {
     display: none;
 }
+.topnav {
+  top: 0;
+  right: 0;
+  background: rgba(32, 32, 32, 0.3);
+  position: fixed;
+  overflow: hidden;
+}
 .sidebar {
   height: 100%;
   width: 0;
