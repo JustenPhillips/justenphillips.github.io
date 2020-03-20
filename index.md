@@ -1,6 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="mySidebar" class="sidebar">
 <ul>
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
     <h1>Scatterbrain</h1><br>
     <h5><i class="material-icons">&#xe55c;</i> United States</h5><br>
 <a href="mailto:hack.this.0n3@gmail.com">
@@ -8,8 +9,7 @@
 <a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer">Keybase</a><br>
 <a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer">Twitter</a><br>
 <a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer">GitHub</a><br>
-<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰ Close Sidebar</a>
-</ul>
+    </ul>
 </div>
 
 <script>
@@ -24,9 +24,8 @@ function closeNav() {
 }
 </script>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>
-</div>  
+<button class="openbtn" onclick="openNav()">☰</button>
+
 
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
