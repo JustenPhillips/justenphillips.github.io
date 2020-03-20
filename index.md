@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="mySidebar" class="sidebar">
 <ul>
-<a href="javascript:void(0)" onclick="this.style.visibility='hidden';closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
+<a href="javascript:void(0)" onclick="document.getElementsByClassName("openbtn").style.visibility="visible";closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
     <h1>Scatterbrain</h1><br>
     <h5><i class="material-icons">&#xe55c;</i> United States</h5><br>
 <a href="mailto:hack.this.0n3@gmail.com">
