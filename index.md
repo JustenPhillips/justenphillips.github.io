@@ -35,7 +35,7 @@ function closeNav() {
 <button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
 <button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
-<br><br><br><img src="img/quantum.jpg"></img><br>
+<br><br><br><img src="img/quantum.jpg" width="400"/><br>
 
 ### Short Bio about Me:
 
