@@ -27,8 +27,8 @@ function closeNav() {
 </div>
 
 <div>
-<button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
-<button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
+<button class="showButton" id="aButton" onclick="openNav();" size="30">☰Menu</button>
+<button class="closeButton" id="cButton" onclick="closeNav();" size="30">☰Hide</button>
 </div>
   
 ### Short Bio about Me:
