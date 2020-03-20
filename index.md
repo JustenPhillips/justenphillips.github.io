@@ -27,12 +27,12 @@ function closeNav() {
 </script>
 
 <div id="aButton">
-<button onclick="openNav();">☰</button>
+<button onclick="openNav();">☰Menu</button>    
+</div>
+<div id="cButton" style="visibility: hidden;">
+<button onclick="closeNav();">☰Hide</button>
 </div>
 
-<div id="cButton" style="visibility: hidden;">
-<button onclick="closeNav();">☰</button>
-</div>
 
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
