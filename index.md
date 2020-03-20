@@ -29,7 +29,6 @@ function hideButton() {
   } else {
     x.style.display = "none";
   }
-}
 </script>
 
 <button class="openbtn" onclick="Button()">☰</button>
