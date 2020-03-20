@@ -1,4 +1,41 @@
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("aButton").style.visibility="hidden";
+  document.getElementById("cButton").style.visibility="visible";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("aButton").style.visibility="visible";
+  document.getElementById("cButton").style.visibility="hidden";
+}
+</script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="topnav">
+  <a href="#home">Home</a>
+  <a href="#">Info</a>
+  <a href="#">Contact</a>
+  <a href="#about">About</a>
+</div> 
+<div id="mySidebar" class="sidebar">
+<ul>
+    <img src="img/avatar.png" class="avatar">
+    <h1>Scatterbrain</h1>
+    <b>Penetration Tester</b><br><br>
+  <i class="material-icons">&#xe55c; </i><font size="5"> USA</font>
+<a href="mailto:hack.this.0n3@gmail.com" size="5">
+<meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a>
+<a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Keybase</a>
+<a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Twitter</a>
+<a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">GitHub</a>
+    </ul>
+</div>
 
+<div>
+<button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
+<button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
+</div>
+<br><br><br>
 # Bankrobber
  
 [Home](index.md) / Bankrobber - Hack The Box
