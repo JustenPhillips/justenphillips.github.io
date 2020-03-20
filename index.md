@@ -16,7 +16,7 @@ function closeNav() {
 <ul>
     <img src="img/avatar.png" class="avatar">
     <h1>Scatterbrain</h1>
-    <b>Penetration Tester</b><br>
+    <b>Penetration Tester</b><br><br>
   <i class="material-icons">&#xe55c; </i><font size="5"> USA</font>
 <a href="mailto:hack.this.0n3@gmail.com" size="5">
 <meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a>
@@ -27,8 +27,8 @@ function closeNav() {
 </div>
 
 <div>
-<button class="showButton" id="aButton" onclick="openNav();" size="30">☰Menu</button>
-<button class="closeButton" id="cButton" onclick="closeNav();" size="30">☰Hide</button>
+<button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
+<button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
   
 ### Short Bio about Me:
