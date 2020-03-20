@@ -27,8 +27,8 @@ function closeNav() {
 </script>
 
 <div>
-<button id="aButton" onclick="openNav();" style="background-color:black;color:greenyellow;border-color:greenyellow">☰Menu</button>
-<button id="cButton" onclick="closeNav();" style="visibility:hidden;background-color:black;color:greenyellow;border-color:greenyellow">☰Hide</button>
+<button id="aButton" onclick="openNav();" style="font-size:20px;background-color:black;color:greenyellow;border-color:greenyellow">☰Menu</button>
+<button id="cButton" onclick="closeNav();" style="visibility:hidden;font-size:20px;background-color:black;color:greenyellow;border-color:greenyellow">☰Hide</button>
 </div>
 
 ### Short Bio about Me:
