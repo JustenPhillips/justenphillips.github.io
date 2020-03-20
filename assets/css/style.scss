@@ -17,7 +17,6 @@ header {
   transition: 0.5s;
   padding-top: 60px;
 }
-
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -25,23 +24,19 @@ header {
   display: block;
   transition: 0.3s;
 }
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+.showButton {
+  font-size:20px;
+  background-color:black;
+  color:greenyellow;
+  border-color:greenyellow;
 }
-.openbtn {
-  font-size: 20px;
-  padding: 10px 15px;
-  border: none;
+.closeButton {
+  visibility:hidden;
+  font-size:20px;
+  background-color:black;
+  color:greenyellow;
+  border-color:greenyellow;
 }
-
-.openbtn:hover {
-}
-
 #main {
   transition: margin-left .5s;
   padding: 16px;
