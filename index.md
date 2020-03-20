@@ -1,7 +1,17 @@
-<link type="text/javascript" rel="script" href="/assets/js/nav.js">
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("aButton").style.visibility="hidden";
+  document.getElementById("cButton").style.visibility="visible";
+}
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("aButton").style.visibility="visible";
+  document.getElementById("cButton").style.visibility="hidden";
+}
+</script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+
 <div id="mySidebar" class="sidebar">
 <ul>
     <h1>Scatterbrain</h1><br>
