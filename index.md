@@ -14,14 +14,14 @@ function closeNav() {
 
 <div id="mySidebar" class="sidebar">
 <ul>
-    <h1>Scatterbrain</h1><br>
-    <h2>Pentester</h2><br>
-    <h4><i class="material-icons">&#xe55c;</i> United States</h4><br>
-<a href="mailto:hack.this.0n3@gmail.com">
-<meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a><br>
-<a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer">Keybase</a><br>
-<a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer">Twitter</a><br>
-<a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer">GitHub</a><br>
+    <h1>Scatterbrain</h1>
+    <h4 color="white">Pentester</h4>
+    <h4><i class="material-icons">&#xe55c;</i> United States</h4>
+<a href="mailto:hack.this.0n3@gmail.com" size="5">
+<meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a>
+<a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Keybase</a>
+<a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Twitter</a>
+<a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">GitHub</a>
     </ul>
 </div>
 
