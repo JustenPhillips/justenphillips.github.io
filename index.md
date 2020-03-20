@@ -23,7 +23,7 @@ function closeNav() {
   document.getElementById("aButton").style.visibility="visible";
   document.getElementById("cButton").style.visibility="hidden";
 }
-
+ 
 </script>
 
 <div id="aButton">
