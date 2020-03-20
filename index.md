@@ -1,5 +1,5 @@
 <head>
-    <script type="text/javascript" src="/assets/js/nav.js"></script>
+    <script src="/assets/js/nav.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
