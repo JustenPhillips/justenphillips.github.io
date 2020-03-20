@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="mySidebar" class="sidebar">
 <ul>
-<a href="javascript:void(0)" class="closebtn" onclick="Button()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
+<a href="javascript:void(0)" onclick="this.style.visibility='hidden';closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
     <h1>Scatterbrain</h1><br>
     <h5><i class="material-icons">&#xe55c;</i> United States</h5><br>
 <a href="mailto:hack.this.0n3@gmail.com">
@@ -22,16 +22,10 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
-function hideButton() {
-  var x = document.getElementById("mySidebar");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+
 </script>
 
-<button class="openbtn" onclick="Button()">☰</button>
+<button class="openbtn" onclick="this.style.visibility='hidden';openNav()">☰</button>
 
 
 ### Short Bio about Me:
