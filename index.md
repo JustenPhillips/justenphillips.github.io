@@ -30,8 +30,6 @@ function closeNav() {
 <button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
 <button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
-
-<div class="main">
   
 ### Short Bio about Me:
 Hello to the good, the bad, and the beautiful people,
@@ -57,5 +55,4 @@ This was a medium-difficulty. For the initial shell, you need to identify a vuln
 
 ----
 
-Hella Secure Corp. © 2020 and beyond  
-</div>
+Hella Secure Corp. © 2020 and beyond
