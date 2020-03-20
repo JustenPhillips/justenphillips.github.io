@@ -24,7 +24,7 @@ function closeNav() {
 </script>
 
 <div id="aButton" class="button">
-<button onclick="this.style.visibility='hidden';openNav()">☰</button>
+<button onclick="document.getElementById("aButton").style.visibility="hidden";openNav()">☰</button>
 </div>
 
 ### Short Bio about Me:
