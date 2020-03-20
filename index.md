@@ -1,7 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div id="mySidebar" class="sidebar">
 <ul>
-<a href="javascript:void(0)" onclick="closeNav()" itemprop="sameAs" rel="nofollow noopener noreferrer">☰</a>
     <h1>Scatterbrain</h1><br>
     <h5><i class="material-icons">&#xe55c;</i> United States</h5><br>
 <a href="mailto:hack.this.0n3@gmail.com">
@@ -16,17 +15,23 @@
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("aButton").style.visibility="hidden";
+  document.getElementById("cButton").style.visibility="visible";
 }
  
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("aButton").style.visibility="visible"
+  document.getElementById("aButton").style.visibility="visible";
+  document.getElementById("cButton").style.visibility="hidden";
 }
 
 </script>
 
 <div id="aButton">
 <button onclick="openNav();">☰</button>
+</div>
+
+<div id="cButton" style="visibility: hidden;">
+<button onclick="closeNav();">☰</button>
 </div>
 
 ### Short Bio about Me:
