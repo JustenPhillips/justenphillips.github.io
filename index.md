@@ -45,7 +45,7 @@ Welcome to my page, you have now reached the end of the internet and if you some
 This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)
 
 **Bankrobber**
-
+ 
 This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.
 
 [<img src="img/card.jpeg" width="60%">](bankrobber.md) 
