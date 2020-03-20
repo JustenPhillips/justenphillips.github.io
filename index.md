@@ -16,8 +16,8 @@ function closeNav() {
 <ul>
     <img src="img/avatar.png" class="avatar">
     <h1>Scatterbrain</h1>
-    <h4 color="white">Penetration Tester</h4>
-    <h3><i class="material-icons">&#xe55c;</i> United States</h3>
+    <h4>Penetration Tester</h4>
+    <i class="material-icons">&#xe55c;</i>United States
 <a href="mailto:hack.this.0n3@gmail.com" size="5">
 <meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a>
 <a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Keybase</a>
