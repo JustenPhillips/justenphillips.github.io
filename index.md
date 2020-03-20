@@ -27,9 +27,9 @@ function closeNav() {
 </script>
 
 <div id="aButton">
-<button onclick="openNav();">☰Menu</button>    
+<button onclick="openNav();" style="background-color:black;color:greenyellow;>☰Menu</button>    
 </div>
-<div id="cButton" style="visibility: hidden;">
+<div id="cButton" style="visibility: hidden;" style="background-color:black;color:greenyellow;>
 <button onclick="closeNav();">☰Hide</button>
 </div>
 
