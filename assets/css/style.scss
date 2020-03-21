@@ -6,13 +6,6 @@
 header {
     display: none;
 }
-.topnav {
-  top: 0;
-  right: 0;
-  background-color:rgba(32, 32, 32, 0.3);
-  position: absolute;
-  overflow: hidden;
-}
 .content {
    max-width:800px;
    margin:auto;
@@ -78,14 +71,112 @@ header {
     font-size:20px;
     color:#C2F761;
 }
-@media screen and (max-width: 900px) {
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
 .sidebar {
-    visibility:hidden;
+  height: 50%;
+  width: 250px;
+  position: absolute;
+  background-color:rgba(32, 32, 32, 0.3);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+    
+}
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+.avatar {
+  border-radius:50%;
+  border: 1px solid #C2F761;
+  width:100px;
+  height:100px; 
+}
+.showButton {
+    position: absolute;
+    top: 0;
+    width: 0;
+    left: 0;
+    border: 0px solid #C2F761;
+    z-index: 99;
+    padding: 0;
+    text-align: center;
+    font-size:20px;
+    color:#C2F761;
 }
 .closeButton {
     visibility:hidden;
+    position: absolute;
+    top: 0;
+    width: 0;
+    left: 0;
+    border: 0px solid #C2F761;
+    z-index: 99;
+    padding: 0;
+    text-align: center;
+    font-size:20px;
+    color:#C2F761;
+}
+ }
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  background-color:rgba(32, 32, 32, 0.3);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+    
+}
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+.avatar {
+  border-radius:50%;
+  border: 1px solid #C2F761;
+  width:150px;
+  height:150px; 
 }
 .showButton {
+    position: fixed;
+    top: 0;
+    width: 0;
+    left: 0;
+    border: 0px solid #C2F761;
+    z-index: 99;
+    padding: 0;
+    text-align: center;
+    font-size:20px;
+    color:#C2F761;
+}
+.closeButton {
     visibility:hidden;
- }
- }
+    position: fixed;
+    top: 0;
+    width: 0;
+    left: 0;
+    border: 0px solid #C2F761;
+    z-index: 99;
+    padding: 0;
+    text-align: center;
+    font-size:20px;
+    color:#C2F761;
+}  
+    
+}
