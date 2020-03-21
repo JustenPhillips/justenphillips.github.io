@@ -42,7 +42,7 @@ function closeNav() {
 
 <br>
 <a href="https://hackthebox.eu/"><img class="imgHTB" src="img/htblogo.png"/></a><br>
-  <a href="https://www.hackthebox.eu/home/users/profile/114437#"><script src="https://www.hackthebox.eu/badge/114437"></script></a><br>
+  <a href="https://www.hackthebox.eu/home/users/profile/114437#"><script class="imgHTB" src="https://www.hackthebox.eu/badge/114437"></script></a><br>
 <table>
   <tr>
     <th>Box</th> 
