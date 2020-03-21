@@ -38,18 +38,19 @@ function closeNav() {
 <img class="img1" src="img/mars.jpg"/>
 <hr>
 <h2> Write-ups</h2>
+<img class="img1" src="img/qpwniesLogo.png"/>
 <p>This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)</p>
 
 <b>Bankrobber</b>
  
 <p>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</p>
 
-<a href="bankrobber.md"><img src="img/card.jpeg" width="60%"></a>
+<a href="bankrobber.md"><img class="img1" src="img/card.jpeg"></a>
 <br>
 <b>JSON</b>
  
 <p>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, `SeImpersonatePrivilege`, to perform a JuicyPotato exploit to get a SYSTEM shell.</p>
-<img src="img/JSON.png" width="60%">
+<img class="img1" src="img/JSON.png">
 <hr>
 Hella Secure Corp. © 2020 and beyond
 </div>
