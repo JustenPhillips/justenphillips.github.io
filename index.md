@@ -41,7 +41,8 @@ function closeNav() {
 <img class="img3" src="img/pwniesLogo.png"/><br>
 
 <br>
-<a href="https://hackthebox.eu/"><img class="imgHTB" src="img/htblogo.png"/>
+<a href="https://hackthebox.eu/"><img class="imgHTB" src="img/htblogo.png"/><br>
+  <img class="imgHTB" src="https://www.hackthebox.eu/badge/image/114437"/><br>
 <table>
   <tr>
     <th>Box</th> 
