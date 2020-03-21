@@ -13,7 +13,6 @@ function closeNav() {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="container">
 <section>
-<div id="mySidebar" class="sidebar">
 <ul>
     <img src="img/avatar.png" class="avatar">
     <h1>Scatterbrain</h1>
@@ -25,14 +24,10 @@ function closeNav() {
 <a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Twitter</a>
 <a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">GitHub</a>
     </ul>
-</div>
-
-<div class="buttons">
 <button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
 <button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
-</div>
 </section>
- <aside>
+<aside>
 <p align="right"><a href="index.html">Home &nbsp;</a><a href="#">Post &nbsp;</a><a href="#">Categories &nbsp;</a><a href="#">Tags &nbsp;</a><a href="#">About &nbsp;</a><a href="#">Affiliates </a></p>
 
 <br><br><br><img class="img1" src="img/quantum.jpg"/><br>
