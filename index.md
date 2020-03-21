@@ -18,7 +18,7 @@ function closeNav() {
     <b>Penetration Tester</b><br><br>
   <i class="material-icons">&#xe55c; </i><font size="5"> USA</font>
 <a href="mailto:hack.this.0n3@gmail.com" size="5">
-<meta itemprop="email" content="hack.this.0n3@gmail.com">Email</a>
+<meta itemprop="email" content="hack.this.0n3@gmail.com">✉ Email</a>
 <a href="https://keybase.io/scatterbrain" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Keybase</a>
 <a href="https://twitter.com/" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">Twitter</a>
 <a href="https://github.com/Scatter-Security" itemprop="sameAs" rel="nofollow noopener noreferrer" size="5">GitHub</a>
