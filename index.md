@@ -38,7 +38,7 @@ function closeNav() {
 <img class="img1" src="img/mars.jpg"/>
 <hr>
 <h2> Write-ups</h2>
-<img class="img1" src="img/qpwniesLogo.png"/>
+<img class="img1" src="img/pwniesLogo.png"/>
 <p>This is where I will be posting my write-ups for my digital adventures on [Hack the box](https://hackthebox.eu)</p>
 
 <b>Bankrobber</b>
