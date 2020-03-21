@@ -9,26 +9,19 @@ header {
 
 
 .container {
-  max-width: 750px;
-  border: 1px solid #C2F761;
+  width: 538px;
 }
 section,
 aside {
   margin: 10px;
 }
 .section {
-  border: 1px solid #C2F761;
-  max-width: 250px;
-  background-color:rgba(32, 32, 32, 0.3);
-  z-index: 1;
-  overflow-x: hidden;
-  transition: 0.5s;
   float: left;
+  width: 340px;
 }
 aside {
   float: right;
-  max-width: 500px;
-  border: 1px solid #C2F761;
+  width: 158px;
 }
 
 .img1 {
