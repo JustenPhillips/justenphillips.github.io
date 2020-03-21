@@ -14,9 +14,9 @@ function closeNav() {
 <div id="mySidebar" class="sidebar">
 <ul class="author__urls social-icons">
     <img src="img/avatar.png" class="avatar">
-    <h1>Scatterbrain</h1>
+    <center><h1>Scatterbrain</h1>
     <b>Penetration Tester</b><br>
-          <svg width="15px" height="15px" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-fw" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg><!-- <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> --> <span itemprop="name">United States</span>
+          <svg width="15px" height="15px" class="svg-inline--fa fa-map-marker-alt fa-w-12 fa-fw" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="map-marker-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"></path></svg><!-- <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> --> <span itemprop="name">United States</span></center>
  <br><br>
           <a href="mailto:mail@null.com">
             <meta itemprop="email" content="scatter@protonmail.io">
