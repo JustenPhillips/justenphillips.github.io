@@ -29,7 +29,7 @@ function closeNav() {
 <button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
 <div class="content">
-<p align="right"> <a href="index.html"> Home &nbsp; </a> <a href="#">Post &nbsp; </a> <a href="#"> Categories &nbsp;</a> <a href="#"> Tags &nbsp;</a><a href="#"> About &nbsp; </a> <a href="#"> Affiliates </a></p>
+<a href="index.html">Home&nbsp;</a><a href="#">Post&nbsp;</a><a href="#">Categories&nbsp;</a><a href="#">Tags&nbsp;</a><a href="#">About&nbsp;</a><a href="#">Affiliates</a></p>
 
 <br><br><br><img class="img1" src="img/quantum.jpg"/><br>
 <h3> Short Bio about Me:</h3>
