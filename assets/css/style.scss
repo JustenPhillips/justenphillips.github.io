@@ -74,10 +74,6 @@ header {
     font-size:20px;
     color:#C2F761;
 }
-@media all and (max-width: 420px) {
- .sidebar {
-  background-color:rgba(32, 32, 32, 1.0);
-
-    
-}
+@media all and (min-width: 600px) {
+ .sidebar {background-color:rgba(32, 32, 32, 1.0);}
 }
