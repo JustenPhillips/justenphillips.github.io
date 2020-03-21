@@ -34,20 +34,19 @@ function closeNav() {
 <br><br><br><img class="img1" src="img/quantum.jpg"/><br>
 <h3> Short Bio about Me:</h3>
 <p>Hello to the good, the bad, and the beautiful people,</p><br>
-<p>Welcome to my page, you have now reached the end of the internet and if you somehow made it here by mistake, it's not too late to hit the `X` in the corner before you get submerged! So a little 'bit' or a 'byte' about me, I make cornball jokes! Oh, and I like to break into things most people claim secure, without malice, for the challenge. If you prefer, you can address me by one of the many handles that I mask my identity with and change almost as often as my underwear. My full-story will soon be available when my new book gets published in 'Nevuary'. Where I am from they might say something like "Game is sold, not told". Unless it's about a hack cause that's the type of knowledge too juicy to withhold!</p>
-<img class="img1" src="img/mars.jpg"/>
+<p>Welcome to my page, you have now reached the end of the internet and if you somehow made it here by mistake, it's not too late to hit the `X` in the corner before you get submerged! So a little 'bit' or a 'byte' about me, I make cornball jokes! Oh, and I like to break into things most people claim secure, without malice, for the challenge. If you prefer, you can address me by one of the many handles that I mask my identity with and change almost as often as my underwear. My full-story will soon be available when my new book gets published in 'Nevuary'. Where I am from they might say something like "Game is sold, not told". Unless it's about a hack cause that's the type of knowledge too juicy to withhold!<br><img class="img1" src="img/mars.jpg"/></p>
+
 <hr>
 <h2> Write-ups</h2>
-<img class="img1" src="img/pwniesLogo.png"/>
-<p>This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">[Hack the box]</a></p>
+<p><img class="img1" src="img/pwniesLogo.png"/><br>This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">[Hack the box]</a><br><br></p>
 
-<p><b>Bankrobber</b></p>
- <br>
-<p>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</p>
-<a href="bankrobber.md"><img class="img1" src="img/card.jpeg"/></a>
-<p><b>JSON</b></p>
-<p>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, <code>SeImpersonatePrivilege</code>, to perform a JuicyPotato exploit to get a SYSTEM shell.</p>
-<img class="img1" src="img/JSON.png"/>
+<p><b>Bankrobber</b><br><br></p>
+
+<p>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.<br><a href="bankrobber.md"><img class="img1" src="img/card.jpeg"/></a><br><br></p>
+
+<p><b>JSON</b><br><br></p>
+<p>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, <code>SeImpersonatePrivilege</code>, to perform a JuicyPotato exploit to get a SYSTEM shell.<br><img class="img1" src="img/JSON.png"/><br><br></p>
+
 <hr>
 <p>Hella Secure Corp. © 2020 and beyond</p>
 </div>
