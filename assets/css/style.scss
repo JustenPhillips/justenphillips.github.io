@@ -11,6 +11,13 @@ header {
    max-width:800px;
    margin:auto;
 }
+.content a {
+   padding: 14px 25px;
+   text-decoration: none; 
+}
+.content a:hover {
+  text-decoration: underline;
+}
 .img1 {
   border-radius:25% 10%;
   border: 1px solid #C2F761;
