@@ -6,21 +6,18 @@
 header {
     display: none;
 }
-.content {
-   max-width:800px;
-   margin:auto;
-   border: 1px solid #C2F761;
+
+
+.container {
+  width: 600px;
 }
-.img1 {
-  border-radius:25% 10%;
+section,
+aside {
+  margin: 10px;
   border: 1px solid #C2F761;
-  width:700px;
-  height:400px; 
-  display: block;
-  margin-left: auto;
-  margin-right: auto; 
+    
 }
-.sidebar {
+.section {
   border: 1px solid #C2F761;
   height: 100%;
   width: 250px;
@@ -32,8 +29,23 @@ header {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-    
+  float: left;
 }
+aside {
+  float: right;
+  width: 345px;
+}
+
+.img1 {
+  border-radius:25% 10%;
+  border: 1px solid #C2F761;
+  width:700px;
+  height:400px; 
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
