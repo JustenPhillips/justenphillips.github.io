@@ -6,24 +6,11 @@
 header {
     display: none;
 }
-
-
-.container {
-  width: 538px;
+.content {
+   max-width:800px;
+   margin:auto;
+   border: 1px solid #C2F761;
 }
-section,
-aside {
-  margin: 10px;
-}
-.section {
-  float: left;
-  width: 340px;
-}
-aside {
-  float: right;
-  width: 158px;
-}
-
 .img1 {
   border-radius:25% 10%;
   border: 1px solid #C2F761;
@@ -33,7 +20,20 @@ aside {
   margin-left: auto;
   margin-right: auto; 
 }
-
+.sidebar {
+  border: 1px solid #C2F761;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  background-color:rgba(32, 32, 32, 0.3);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+    
+}
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -48,7 +48,6 @@ aside {
   height:150px; 
 }
 .showButton {
-    visibility:hidden;
     position: fixed;
     top: 0;
     width: 0;
@@ -61,7 +60,7 @@ aside {
     color:#C2F761;
 }
 .closeButton {
-    visibility:visible;    
+    visibility:hidden;
     position: fixed;
     top: 0;
     width: 0;
