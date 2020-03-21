@@ -39,7 +39,7 @@ function closeNav() {
 <hr>
 <h2> Write-ups</h2>
 <p><img class="img1" src="img/pwniesLogo.png"/><br>
-This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">Hack the box</a><br></p>
+This is where I will be posting my write-ups for my digital adventures on HTB<br></p>
 
 <table style="width:100%">
   <tr>
@@ -48,19 +48,19 @@ This is where I will be posting my write-ups for my digital adventures on <a hre
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="bankrobber.md"><img class="img1" src="img/card.jpeg"/></a></td>
+    <td><a href="bankrobber.md"><img class="img2" src="img/card.jpeg"/></a></td>
     <td>Bankrobber</td>
     <td>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</td>
   </tr>
   <tr>
-    <td><img class="img1" src="img/JSON.png"/></td>
+    <td><img class="img2" src="img/JSON.png"/></td>
     <td>JSON</td>
     <td>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, <code>SeImpersonatePrivilege</code>, to perform a JuicyPotato exploit to get a SYSTEM shell.</td>
   </tr>
   <tr>
-    <td><img class="img1" src="img/JSON.png"/></td>
+    <td><img class="img2" src="img/JSON.png"/></td>
     <td>Forest</td>
-    <td>80</td>
+    <td>desciptoion of forest</td>
   </tr>
 </table>
 
