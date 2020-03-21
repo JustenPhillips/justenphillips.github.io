@@ -38,6 +38,8 @@ function closeNav() {
 
 <hr>
 <h2> Write-ups</h2>
+<p><img class="img1" src="img/pwniesLogo.png"/><br>
+This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">Hack the box</a><br></p>
 
 <table style="width:100%">
   <tr>
@@ -62,7 +64,6 @@ function closeNav() {
   </tr>
 </table>
 
-<p><img class="img1" src="img/pwniesLogo.png"/><br>This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">Hack the box</a><br></p>
 
 <hr>
 <p>Hella Secure Corp. © 2020 and beyond</p>
