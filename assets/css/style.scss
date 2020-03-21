@@ -7,15 +7,16 @@ header {
     display: none;
 }
 .content {
-   float: right;
    max-width:800px;
    margin:auto;
 }
 .content a {
+   float: left;
    padding: 14px 25px;
    text-decoration: none; 
 }
 .content a:hover {
+  color:#C2F761;
   text-decoration: underline;
 }
 .img1 {
@@ -28,7 +29,6 @@ header {
   margin-right: auto; 
 }
 .sidebar {
-  float: left;
   height: 100%;
   width: 250px;
   position: fixed;
