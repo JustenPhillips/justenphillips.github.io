@@ -79,4 +79,13 @@ header {
     float: none;
     width: auto;
   }
+ .sidebar {
+  width: 250px;
+  position: absolute;
+  background-color:rgba(32, 32, 32, 0.3);
+  top: 0;
+  left: 50%;
+  margin: auto;
+    
+}
 }
