@@ -36,8 +36,8 @@ function closeNav() {
     </ul>
 </div>
 <div class="buttons">
-<button class="showButton" id="aButton" onclick="openNav();">☰ Menu</button>
-<button class="closeButton" id="cButton" onclick="closeNav();">☰ Hide</button>
+<button class="showButton" id="aButton" onclick="openNav();">☰Menu</button>
+<button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
 <div class="content">
 <a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a>
