@@ -39,12 +39,12 @@ function closeNav() {
 <hr>
 <h2> Write-ups</h2>
 <p><img class="img1" src="img/pwniesLogo.png"/><br>
-This is where I will be posting my write-ups for my digital adventures on HTB<br></p>
+Hack The Box<br></p>
 
 <table style="width:100%">
   <tr>
-    <th>Logo</th>
-    <th>Box</th> 
+    <th>Box</th>
+    <th></th> 
     <th>Description</th>
   </tr>
   <tr>
