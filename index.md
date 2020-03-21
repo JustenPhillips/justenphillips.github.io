@@ -39,10 +39,8 @@ function closeNav() {
 <hr>
 <h2> Write-ups</h2>
 <img class="img3" src="img/pwniesLogo.png"/><br>
-
-<br>
 <a href="https://hackthebox.eu/">
-  <img class="imgHTB" src="img/htblogo.png"/></a><br><br>
+  <img class="imgHTB" src="img/htblogo.png"/></a>
   
 <a href="https://www.hackthebox.eu/home/users/profile/114437">
   <img class="imgHTB" src="https://www.hackthebox.eu/badge/image/114437"/></a><br>
