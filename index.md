@@ -46,7 +46,7 @@ function closeNav() {
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="bankrobber.html">Bankrobber</a></td>
+    <td><a href="bankrobber.md">Bankrobber</a></td>
     <td>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</td>
   </tr>
   <tr>
