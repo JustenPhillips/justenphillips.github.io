@@ -51,13 +51,10 @@ function closeNav() {
 
 <a href="bankrobber.md"><img src="img/card.jpeg" width="60%"></a>
  
-<b>JSON<b>
+<b>JSON</b>
  
 <p>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, `SeImpersonatePrivilege`, to perform a JuicyPotato exploit to get a SYSTEM shell.</p>
-
 <img src="img/JSON.png" width="60%">
-
 <hr>
-
 Hella Secure Corp. © 2020 and beyond
 </div>
