@@ -41,7 +41,7 @@ function closeNav() {
 <img class="img1" src="img/pwniesLogo.png"/>
 <pre>This is where I will be posting my write-ups for my digital adventures on <a href="https://hackthebox.eu">[Hack the box]</a></pre>
 
-<b>Bankrobber</b>
+<p><b>Bankrobber</b></p>
  <br>
 <pre>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</pre>
 <a href="bankrobber.md"><img class="img1" src="img/card.jpeg"/></a>
