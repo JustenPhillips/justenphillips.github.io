@@ -1,4 +1,5 @@
 <script>
+  
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("aButton").style.visibility="hidden";
@@ -9,6 +10,8 @@ function closeNav() {
   document.getElementById("aButton").style.visibility="visible";
   document.getElementById("cButton").style.visibility="hidden";
 }
+document.onload="openNav()">
+
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="topnav">
