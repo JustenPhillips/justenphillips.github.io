@@ -44,13 +44,11 @@ function closeNav() {
 <b>Bankrobber</b>
  
 <p>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</p>
-
-<a href="bankrobber.md"><img class="img1" src="img/card.jpeg"></a>
-<br>
+<a href="bankrobber.md"><img class="img1" src="img/card.jpeg"/></a>
+<br><br>
 <b>JSON</b>
- 
 <p>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, `SeImpersonatePrivilege`, to perform a JuicyPotato exploit to get a SYSTEM shell.</p>
-<img class="img1" src="img/JSON.png">
+<img class="img1" src="img/JSON.png"/>
 <hr>
 Hella Secure Corp. © 2020 and beyond
 </div>
