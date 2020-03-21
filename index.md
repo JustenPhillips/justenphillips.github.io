@@ -38,10 +38,9 @@ function closeNav() {
 
 <hr>
 <h2> Write-ups</h2>
-<p><img class="img1" src="img/pwniesLogo.png"/><br>
-Hack The Box<br></p>
+<img class="img3" src="img/pwniesLogo.png"/><br>
 
-<table style="width:100%">
+<table>
   <tr>
     <th>Box</th>
     <th></th> 
