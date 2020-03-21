@@ -70,19 +70,7 @@ header {
     font-size:20px;
     color:#C2F761;
 }
-@media screen and (max-width: 700px) {
-.sidebar {
-    visibility:hidden;
-}
-.closeButton {
-    visibility:hidden;
-}
-.showButton {
-    visibility:hidden;
- }
- }
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 650px) {
 .sidebar {
     visibility:hidden;
 }
