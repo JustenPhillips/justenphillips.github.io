@@ -40,6 +40,8 @@ function closeNav() {
 <h2> Write-ups</h2>
 <img class="img3" src="img/pwniesLogo.png"/><br>
 
+<br>
+<img class="img1" src="img/pwniesLogo.png"/>
 <table>
   <tr>
     <th>Box</th> 
