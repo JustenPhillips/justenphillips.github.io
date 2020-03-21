@@ -19,7 +19,27 @@ header {
   color:#C2F761;
   text-decoration: underline;
 }
+table, th, td {
+  border: 1px solid #C2F761;
+  border-collapse: collapse;
+}
 .img1 {
+  border-radius:25% 10%;
+  border: 1px solid #C2F761;
+  height:100%;
+  margin: auto;
+  width: 100%;
+  display:block;
+}
+.img2 {
+  border-radius:25% 10%;
+  border: 1px solid #C2F761;
+  height:161px;
+  margin: auto;
+  width: 87px;
+  display:block;
+}
+.img3{
   border-radius:25% 10%;
   border: 1px solid #C2F761;
   height:100%;
