@@ -15,7 +15,7 @@ document.onload="openNav()">
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="topnav">
-  <a href="#home">Home</a>
+  <a href="index.html">Home</a>
   <a href="#">Info</a>
   <a href="#">Contact</a>
   <a href="#about">About</a>
