@@ -21,7 +21,6 @@ header {
   margin-right: auto; 
 }
 .sidebar {
-  border: 1px solid #C2F761;
   height: 100%;
   width: 250px;
   position: fixed;
@@ -32,6 +31,7 @@ header {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  margin: auto;
     
 }
 .sidebar a {
