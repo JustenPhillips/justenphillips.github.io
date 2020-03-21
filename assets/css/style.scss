@@ -10,6 +10,9 @@ header {
    max-width:800px;
    margin:auto;
 }
+.author__urls.social-icons .svg-inline--fa,.page__footer-follow .social-icons .svg-inline--fa {
+    color: inherit
+}
 .content a {
    float: left;
    padding: 14px 25px;
