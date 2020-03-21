@@ -10,7 +10,7 @@ header {
   top: 0;
   right: 0;
   background-color:rgba(32, 32, 32, 0.3);
-  position: fixed;
+  position: absolute;
   overflow: hidden;
 }
 .img1 {
@@ -70,7 +70,7 @@ header {
     font-size:20px;
     color:#C2F761;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 900px) {
 .sidebar {
     visibility:hidden;
 }
