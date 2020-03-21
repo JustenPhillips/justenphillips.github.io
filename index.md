@@ -10,15 +10,17 @@ function closeNav() {
   document.getElementById("aButton").style.visibility="visible";
   document.getElementById("cButton").style.visibility="hidden";
 }
-document.onload=openNav()
+window.onload=openNav()
 
 </script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="topnav">
   <a href="index.html">Home</a>
-  <a href="#">Info</a>
-  <a href="#">Contact</a>
-  <a href="#about">About</a>
+  <a href="#">Post</a>
+  <a href="#">Categories</a>
+   <a href="#">Tags</a>
+  <a href="#">About</a>
+  <a href="#">Affiliates</a>
 </div> 
 <div id="mySidebar" class="sidebar">
 <ul>
