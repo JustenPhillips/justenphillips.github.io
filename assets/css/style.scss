@@ -9,13 +9,12 @@ header {
 
 
 .container {
-  width: 600px;
+  max-width: 1000px;
+  border: 1px solid #C2F761;
 }
 section,
 aside {
   margin: 10px;
-  border: 1px solid #C2F761;
-    
 }
 .section {
   border: 1px solid #C2F761;
@@ -34,6 +33,7 @@ aside {
 aside {
   float: right;
   width: 345px;
+  border: 1px solid #C2F761;
 }
 
 .img1 {
