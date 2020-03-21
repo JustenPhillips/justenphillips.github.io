@@ -71,11 +71,15 @@ table, th, td {
     
 }
 .sidebar a {
-  padding: 8px 8px 8px 32px;
+  padding: 14px 25px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   display: block;
   transition: 0.3s;
+}
+.sidebar a:hover {
+  color:#C2F761;
+  text-decoration: underline;
 }
 .avatar {
   border-radius:50%;
