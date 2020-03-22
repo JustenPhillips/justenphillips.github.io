@@ -56,7 +56,6 @@ function closeNav() {
 
 <hr>
 <h2> Write-ups</h2>
-<img class="img3" src="img/pwniesLogo.png"/><br>
 <a href="https://hackthebox.eu/">
   <img class="imgHTB" src="img/htblogo.png"/></a>
   
@@ -80,6 +79,7 @@ function closeNav() {
     <td>desciptoion of forest</td>
   </tr>
 </table>
+<img class="img3" src="img/pwniesLogo.png"/><br>
 
 
 <hr>
