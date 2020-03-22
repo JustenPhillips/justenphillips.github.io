@@ -42,8 +42,8 @@ function closeNav() {
 <div class="content"><center>
 <a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a></center><br>
    <left>
-  <table style="borders:none;border-collapse:collapse;"  cellspacing="0" cellpadding="0">
-  <tr style="padding: 0px;">
+  <table>
+  <tr>
     <th><img src="img/avatar.png" class="avatar"></th> 
     <th><h1>Scatterbrain</h1>
     <b>Penetration Tester</b></th>
