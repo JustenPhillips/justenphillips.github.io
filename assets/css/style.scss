@@ -27,7 +27,9 @@ ul {
   text-decoration: underline;
 }
 table, th, td {
+  padding: 0px;
   border: 0px solid #C2F761;
+  border-collapse: collapse;
 }
 .img1 {
   border-radius:25% 10%;
