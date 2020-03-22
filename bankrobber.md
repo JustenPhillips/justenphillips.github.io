@@ -302,7 +302,7 @@ Now we got admin creds `admin:Hopelessromanticbase64` for a inital foothold.
 
 ### Web Enumeration: Admin Panel
 
-![admin](adminpanel.png)
+![admin](img/adminpanel.png)
  There is a lot of interesting input/output.
  We see a table for pending transaction approval. The backend of our XSS payload.
  We know from our inital port scan that their is a MYSQL DB. This is worth testing for SQL injection.
@@ -317,7 +317,7 @@ Now we got admin creds `admin:Hopelessromanticbase64` for a inital foothold.
 <table style="width:100%">
   <tr>
     <th>ID</th>
-    <th>1</th>
+    <th>User</th>
   </tr>
   <tr>
     <td>Admin</td>
