@@ -46,18 +46,22 @@ function closeNav() {
 </div>
 <h1>JSON</h1>
 <a href="index.html">Home</a>/Json - Hack The Box<br>
-<img src="img/card.jpeg" width="40%"><br>
+<img src="img/JSON.png" width="40%"><br>
 <br>
 
 
 ----
 
 ### Synopsis
-
+JSON was 
 
 ----
 
 ### Reconnaissance
+
+## Portscan
+NMAP
+
 
 
 ### Weaponization
