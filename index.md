@@ -40,8 +40,10 @@ function closeNav() {
 <button class="closeButton" id="cButton" onclick="closeNav();">☰Hide</button>
 </div>
 <div class="content"><center>
-<a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a></center>
-
+<a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a></center><br>
+    <left><img src="img/avatar.png" class="avatar">
+    <h1>Scatterbrain</h1>
+      <b>Penetration Tester</b><br></left>
 <br><br><br><img class="img1" src="img/quantum.jpg"/><br>
 <h3> Short Bio about Me:</h3>
 <p>Hello to the good, the bad, and the beautiful people,</p><br>
