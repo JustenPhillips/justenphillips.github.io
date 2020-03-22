@@ -42,14 +42,14 @@ function closeNav() {
 <div class="content"><center>
 <a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a></center><br>
    <left>
-  <table>
+  <table style="borders:none">
   <tr>
     <th><img src="img/avatar.png" class="avatar"></th> 
     <th><h1>Scatterbrain</h1></th>
   </tr>
   <tr>
     <td></td>
-    <td><b>Penetration Tester</b><br></left></td>
+    <td><b>Penetration Tester</b></td>
   </tr>
 </table></left>     
 <br><br><br><img class="img1" src="img/quantum.jpg"/><br>
