@@ -43,14 +43,12 @@ function closeNav() {
 <a href="index.html">Home</a><a href="#">Post</a><a href="#">Categories</a><a href="#">Tags</a><a href="#">About</a><a href="#">Affiliates</a></center>
 
 <br><br><br>
+
+<h1>Bankrobber</h1>
+<a href="index.html">Home </a> / Bankrobber - Hack The Box<br>
+<img src="img/card.jpeg" width="40%"><br>
+<hr>
 </div>
-# Bankrobber
- 
-[Home](index.md) / Bankrobber - Hack The Box
-
-<img src="img/card.jpeg" width="40%">
-
-****
 
 This was my first active box on HTB that I was able to root, and it's rated at insane difficulty. So I thought this would be a great place to start my first write-up. This being a box I solved almost 6 months ago, bare with me as I try to remember exactly what I did based on scatterd notes I jotted down. I am not writting this like a traditional Pentest report to a client but from the perspective of a teacher speaking to a student and will attempt to recapture my thought proccess so you can understand the flow.
 
