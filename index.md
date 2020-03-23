@@ -78,6 +78,14 @@ function closeNav() {
     <td><a href="forest.html">Forest</a></td>
     <td><br><br>This box was rated as Easy but if you're not a Expert in AD attack vectors like me then I'd easily rate this as hard. It consist of a few AD misconfigurations, where we can easily enumerate a service account with Kerberos preauthentication not enabled to aquire a Golden Ticket to gain a foothold. Then a ACL path exploiting a Exchange group that gives us DC sync rights.</td>
   </tr>
+  <tr>
+    <td><a href="#">RE</a></td>
+    <td><br><br>Comming soon...</td>
+  </tr>
+   <tr>
+    <td><a href="#">Sniper</a></td>
+    <td><br><br>Comming soon...</td>
+  </tr>
 </table></left>
 <img class="img3" src="img/pwniesLogo.png"/><br>
 
