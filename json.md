@@ -52,16 +52,16 @@ function closeNav() {
 
 ----
 
-### Synopsis
+## Synopsis
 Json was a very enlighting box for me that taught me some basic Windows enumeration. It is a Windows specific box that requires us to have a Windows C2 to gain a foothold and for privledge esculation. Basically there is vulnerability in serialization in the backend of the website - with the dot-Net code. so we can abuse that - that when its get deserialzaized and we will get an RCE on the system. The system is Windows System 2012 which is vulnerable to Golden Privileges exploit Juicy Potatoe.
 
 
 
 ----
 
-### Reconnaissance
+## Reconnaissance
 
-## Portscan
+### Portscan
 
 ```bash
 ┌─[account@parrot]─[~/Documents/HTB]
@@ -119,7 +119,7 @@ We can see that there is a open FTP port, a Web Service, SMB, we can clearly see
 
 Let's take a quick ghander at the Web server.
 
-## Web Enumeration
+### Web Enumeration
 
 We immediately get redirected to a login from what look to be a dashboard to some sort of CMS. I try some defualt credentials until `admin:admin` and we get approved.
 
@@ -182,7 +182,7 @@ nikto
 ```
 
 
-### Weaponization
+## Weaponization
 Script to automate all of this.
 
 ```python
@@ -285,9 +285,9 @@ except ModuleNotFoundError:
     subprocess.call("pip3 install netifaces")
     main()
 ```
+Will update later and explain all of this.
 
-
-### Delivery
+## Delivery
 
 You will need impacket https://github.com/SecureAuthCorp/impacket libaries
 
@@ -351,8 +351,8 @@ ewogICAgJyR0eXBlJzonU3lzdGVtLldpbmRvd3MuRGF0YS5PYmplY3REYXRhUHJvdmlkZXIsIFByZXNl
 ```
 
 
-### Command and Control
+## Command and Control
 
 
-### Actions on Objective
+## Actions on Objective
 Flags exfiltrated.
