@@ -61,6 +61,7 @@ function closeNav() {
   
 <a href="https://www.hackthebox.eu/home/users/profile/114437">
   <img class="imgHTB" src="https://www.hackthebox.eu/badge/image/114437"/></a><br>
+  If you found these helpful, please go to my HTB profile and give +1 respect.<br>
 <left><table>
   <tr>
     <th>Box</th> 
