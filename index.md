@@ -61,24 +61,24 @@ function closeNav() {
   
 <a href="https://www.hackthebox.eu/home/users/profile/114437">
   <img class="imgHTB" src="https://www.hackthebox.eu/badge/image/114437"/></a><br>
-<table>
+<left><table>
   <tr>
     <th>Box</th> 
     <th>Description</th>
   </tr>
   <tr>
     <td><a href="bankrobber.html">Bankrobber</a></td>
-    <td>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</td>
+    <td><br><br>This is a insane web app box that can be solved with some essential OWASP top 10 knowledge to get a user shell, and some basic binary exploitation to esculate to root.</td>
   </tr>
   <tr>
     <td><a href="json.html">JSON</a></td>
-    <td>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, <code>SeImpersonatePrivilege</code>, to perform a JuicyPotato exploit to get a SYSTEM shell.</td>
+    <td><br><br>This was a medium-difficulty. For the initial shell, you need to identify a vulnerability related to JSON-based deserialization on the website, and by leveraging this issue incorporated with a Bearer: header, you can get a RCE on the box. For the root shell, you can leverage a permissive permission configured for the initial user, <code>SeImpersonatePrivilege</code>, to perform a JuicyPotato exploit to get a SYSTEM shell.</td>
   </tr>
   <tr>
     <td><a href="forest.html">Forest</a></td>
-    <td>desciptoion of forest</td>
+    <td><br><br>This box was rated as Easy but if you're not a Expert in AD attack vectors like me then I'd easily rate this as hard. It consist of a few AD misconfigurations, where we can easily enumerate a service account with Kerberos preauthentication not enabled to aquire a Golden Ticket to gain a foothold. Then a ACL path exploiting a Exchange group that gives us DC sync rights.</td>
   </tr>
-</table>
+</table></left>
 <img class="img3" src="img/pwniesLogo.png"/><br>
 
 
