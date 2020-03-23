@@ -53,7 +53,7 @@ function closeNav() {
 ----
 
 ### Synopsis
-Json was a very enlighting box for me that taught me some basic Windows enumeration. It is a Windows specific box that requires us to have a Windows C2 to gain a foothold and for privledge esculation.B asically there is vulnerability in serialization in the backend of the website - with the dot-Net code. so we can abuse that - that when its get deserialzaized and we will get an RCE on the system. The system is Windows System 2012 which is vulnerable to Golden Privileges exploit Juicy Potatoe.
+Json was a very enlighting box for me that taught me some basic Windows enumeration. It is a Windows specific box that requires us to have a Windows C2 to gain a foothold and for privledge esculation. Basically there is vulnerability in serialization in the backend of the website - with the dot-Net code. so we can abuse that - that when its get deserialzaized and we will get an RCE on the system. The system is Windows System 2012 which is vulnerable to Golden Privileges exploit Juicy Potatoe.
 
 
 
