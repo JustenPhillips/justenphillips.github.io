@@ -61,7 +61,8 @@ function closeNav() {
   
 <a href="https://www.hackthebox.eu/home/users/profile/114437">
   <img class="imgHTB" src="https://www.hackthebox.eu/badge/image/114437"/></a><br>
-  If you found these helpful, please go to my HTB profile and give +1 respect.<br>
+  <br><br><br>
+  <p>If you found these helpful, please go to my HTB profile and give +1 respect.</p>
 <left><table>
   <tr>
     <th>Box</th> 
@@ -89,7 +90,8 @@ function closeNav() {
   </tr>
 </table></left>
 <img class="img3" src="img/pwniesLogo.png"/><br>
-
+<br><hr>
+<img src="img/ncl.png"></img><br>
 
 <hr>
 <p>Hella Secure Corp. © 2020 and beyond</p>
