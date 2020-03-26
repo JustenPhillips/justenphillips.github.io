@@ -90,9 +90,9 @@ function closeNav() {
   </tr>
 </table></left>
 <img class="img3" src="img/pwniesLogo.png"/><br>
-<br><hr>
+<br><hr><center>
 <img class="img1" src="img/ncl.png"/><br>
 
 <hr>
 <p>Hella Secure Corp. © 2020 and beyond</p>
-</div>
+</center></div>
