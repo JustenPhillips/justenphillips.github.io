@@ -91,7 +91,7 @@ function closeNav() {
 </table></left>
 <img class="img3" src="img/pwniesLogo.png"/><br>
 <br><hr><center>
-<img class="img1" src="img/ncl.png"/><br>
+<img class="img1" src="img/ncl.png" style="max-width:50%;height:auto;"/><br>
 
 <hr>
 <p>Hella Secure Corp. © 2020 and beyond</p>
